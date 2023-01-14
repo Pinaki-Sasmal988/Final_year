@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BankController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::view('/register','BankRegister');
+Route::get('/admin',[BankController::class,'fetch']);
+Route::post('/BankRegister',[BankController::class,'store']);
+Route::post('/verify',[BankController::class,'insert']);
