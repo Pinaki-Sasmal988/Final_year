@@ -53,9 +53,9 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Register</h2>
+                        <h2 class="form-title">Bank Registration</h2>
 
-                        <form method="POst" action="/BankRegister" class="register-form" id="register-form" enctype="multipart/form-data">
+                        <form method="post" action="/BankRegister" class="register-form" id="register-form" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -119,7 +119,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <label ><i class="zmdi zmdi-account material-icons-name">photo</i></label>
+                                <label ><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="file" name="bank_reg_id"   />
                             </div>
                             <div class="form-group">

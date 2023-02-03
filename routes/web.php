@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('index');
 });
 Route::view('/register','BankRegister');
+Route::view('/search','search');
+Route::view('/show','show');
+Route::view('/admin','admin');
+Route::POST('/search',[BankController::class,'search']);
 Route::get('/admin',[BankController::class,'fetch']);
 Route::post('/BankRegister',[BankController::class,'store']);
 Route::post('/verify',[BankController::class,'insert']);

@@ -48,14 +48,14 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="UserRegistration">User Resitration</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="UserRegistration">User Registration</a></li>
 						<li class="nav-item mx-0 mx-lg-1">
 						
 
 						<a class="nav-link py-3 px-0 px-lg-3 rounded" href="UserLogin">User Login</a></li>
 
 						<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankRegistration">Bank Register</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankRegister">Bank Register</a></li>
 					   <li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankLogin">Bank Login</a></li>
 					
@@ -63,6 +63,8 @@
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+						<li class="nav-item mx-0 mx-lg-1"><a
+							class="nav-link py-3 px-0 px-lg-3 rounded" href="admin">Admin</a></li>
 					
 					
 				</ul>
@@ -158,13 +160,7 @@
 			<!-- Contact Section Form-->
 			<div class="row justify-content-center">
 				<div class="col-lg-8 col-xl-7">
-					<!-- * * * * * * * * * * * * * * *-->
-					<!-- * * SB Forms Contact Form * *-->
-					<!-- * * * * * * * * * * * * * * *-->
-					<!-- This form is pre-integrated with SB Forms.-->
-					<!-- To make this form functional, sign up at-->
-					<!-- https://startbootstrap.com/solution/contact-forms-->
-					<!-- to get an API token!-->
+					
 					<form id="contactForm" data-sb-form-api-token="API_TOKEN">
 						<!-- Name input-->
 						<div class="form-floating mb-3">
@@ -254,10 +250,9 @@
 				</div>
 				<!-- Footer About Text-->
 				 <div class="col-lg-4">
-					<h4 class="text-uppercase mb-4">About Freelancer</h4>
+					<h4 class="text-uppercase mb-4">About Portal</h4>
 					<p class="lead mb-0">
-						Freelance is a free to use, MIT licensed Bootstrap theme created
-						by <a href="http://startbootstrap.com">Start Bootstrap</a> .
+						.....Something.
 					</p>
 				</div>
 			</div>

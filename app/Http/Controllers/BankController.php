@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\bank;
 use App\Models\bank_detail;
 use Illuminate\Http\Request;
+use App\Mail\SendMail;
+use Illuminate\Support\Facades\Mail;
 
 class BankController extends Controller
 {
@@ -30,8 +32,15 @@ class BankController extends Controller
          $image2->storeAs('public/images',$name2);
         $data->bank_reg_id=$name2;
         $data->password=$request->password;
-        $data->save();
-        return "Data Inserted";
+        $result=$data->save();
+        Mail::to('pinakisasmal988@gmail.com')->send(new SendMail);
+        if($result>0){
+            $request->Session('message','Registered');
+            return view('BankRegister');
+        }else{
+            $request->Session('message','Sorry');
+            return view('BankRegister');
+        }
         
     }
     public function fetch(){
@@ -40,19 +49,33 @@ class BankController extends Controller
     }
     public function insert(Request $request){
         $data=new bank_detail;
-        $data->bank_name=$request->name;
-        $data->bank_email=$request->email;
-        $data->bank_ph_no=$request->contact;
+        $data->bank_name=$request->bank_name;
+        $data->bank_email=$request->bank_email;
+        $data->bank_ph_no=$request->bank_ph_no;
         $data->Address=$request->address;
         $data->pin=$request->pin;
-        $data->service_time=$request->serv_time;
+        $data->service_time=$request->service_time;
         $data->reg_no=$request->reg_no;
-        $data->owen_name=$request->owener_name;
-        $data->owen_ph=$request->owener_ph;
+        $data->owen_name=$request->owen_name;
+        $data->owen_ph=$request->owen_ph;
         $data->password=$request->password;
         $data->owen_gov_id=$request->owen_gov_id;
         $data->bank_reg_id=$request->bank_reg_id;
-        $data->save();
+        $result=$data->save();
+        if($result>0){
+            $request->Session('message','Bank details verify Successfully');
+            return redirect('admin');
+        }else{
+            $request->Session('message','Sorry');
+            return redirect('admin');
+        }
 
+    }
+    public function search(Request $req){
+        if($req->isMethod("POST")){
+            $search=$req->pin;
+         $data=bank_detail::where("pin","LIKE","%". $search . "%")->get();
+         return view("show",["data"=>$data]);
+           }
     }
 }
