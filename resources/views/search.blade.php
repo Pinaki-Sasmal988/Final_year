@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+  {{ Session::get('user')['name'] }}
+  <a href="/logout">Logout</a>
     <form method="POST" action="/search">
         @csrf
         <input type="search" name="pin" placeholder="Enter pin" />

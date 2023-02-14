@@ -184,6 +184,9 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
     color: #222;
     font-family: Poppins;
     font-size: 36px; }
+    h4{
+      color: red;
+  }
   
   .main {
     background: #f8f8f8;
@@ -200,8 +203,9 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
     font-weight: 400;
     font-family: Poppins; }
   
-  .container {
-    width: 900px;
+  .container1 {
+    width: 600px;
+    min-width: 50px;
     background: #fff;
     margin: 0 auto;
     box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
@@ -214,6 +218,21 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
     -webkit-border-radius: 20px;
     -o-border-radius: 20px;
     -ms-border-radius: 20px; }
+    .container {
+      width: 900px;
+      min-width: 50px;
+      background: #fff;
+      margin: 0 auto;
+      box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+      -webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+      -o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+      -ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      -moz-border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -o-border-radius: 20px;
+      -ms-border-radius: 20px; }
   
   .display-flex {
     justify-content: space-between;

@@ -30,76 +30,80 @@
                 <div class="wholeform">
                     <div class="details personal">
                         <span class="title"> Serial No {{ $item['id'] }}</span>
-
+                         <input type="hidden" name="id" value="{{ $item['id'] }}">
                         <div class="fields">
                             <div class="input-field">
-                                <label>Full Name</label>
-                                <input type="text"  value="{{ $item['bank_name'] }}"
+                                <label>Bank Name</label>
+                                <input type="text" name="bank_name" value="{{ $item['bank_name'] }}"
                                     readonly />
                             </div>
                             <div class="input-field">
                                 <label>Email</label>
-                                <input type="email"  value="{{ $item['bank_email'] }}"
+                                <input type="email" name="bank_email" value="{{ $item['bank_email'] }}"
                                     readonly />
                             </div>
 
                             <div class="input-field">
                                 <label>Mobile Number</label>
-                                <input type="number"  value="{{ $item['bank_ph_no'] }}"
+                                <input type="number" name="bank_ph_no"  value="{{ $item['bank_ph_no'] }}"
                                     readonly />
                             </div>
 
                             <div class="input-field">
                                 <label>Bank Address</label>
-                                <input type="text"  value="{{ $item['Address'] }}" readonly>
+                                <input type="text" name="address" value="{{ $item['Address'] }}" readonly>
                             </div>
                             <div class="input-field">
                                 <label>PIN Number</label>
-                                <input type="number"  value="{{ $item['pin'] }}"
+                                <input type="number" name="pin" value="{{ $item['pin'] }}"
                                     readonly />
                             </div>
                             <div class="input-field">
                                 <label>Service Time</label>
-                                <input type="text"  value="{{ $item['service_time'] }}" readonly />
+                                <input type="text" name="service_time" value="{{ $item['service_time'] }}" readonly />
                             </div>
 
                             <div class="input-field">
                                 <label>Bank Registration No</label>
-                                <input type="email"  value="{{ $item['reg_no'] }}" readonly />
+                                <input type="email" name="reg_no" value="{{ $item['reg_no'] }}" readonly />
                             </div>
 
                             <div class="input-field">
                                 <label>Owner Name</label>
-                                <input type="text"  value="{{ $item['owen_name'] }}" readonly/>
+                                <input type="text" name="owen_name" value="{{ $item['owen_name'] }}" readonly/>
                             </div>
                             <div class="input-field">
                                 <label>Owner Phone No</label>
-                                <input type="text"  value="{{ $item['owen_ph'] }}" readonly/>
+                                <input type="text" name="owen_ph" value="{{ $item['owen_ph'] }}" readonly/>
                             </div>
-                            <div class="input-field">
-
-                                <input type="hidden"  value="{{ $item['owen_gov_id'] }}" readonly/>
-                            </div>
-                            <div class="input-field">
-                               
-                                <input type="hidden"  value="{{ $item['bank_reg_id'] }}" readonly/>
-                            </div>
+                   
                             <div class="input-field">
                               
-                              <input type="hidden"  value="{{ $item['password'] }}" readonly/>
+                              <input type="hidden" name="password" value="{{ $item['password'] }}" readonly/>
                           </div>
+                          <div class="input-field">
+                              
+                            <input type="hidden" name="bank_reg_id"  value="{{ $item['bank_reg_id'] }}" readonly/>
+                        </div>
+                        <div class="input-field">
+                              
+                            <input type="hidden" name="owner_gov_id" value="{{ $item['owen_gov_id'] }}" readonly/>
+                        </div>
                         </div>
                     </div>
 
-                    <h3>Supported Images</h3>
+                    <h3>Verification Images</h3>
                     <div class="images">
                         <div class="img">
                           <img class="img-thumbnail ms-6" src="{{ asset('storage/images/'.$item['bank_reg_id']) }}" />                        </div>
                         <div class="img">
-                          <img class="img-thumbnail ms-6" src="{{ asset('storage/images/'.$item['owen_gov_id']) }}" />                        </div>
+                          <img class="img-thumbnail ms-6"  src="{{ asset('storage/images/'.$item['owen_gov_id']) }}" />                        </div>
 
                     </div>
-                    <button type="submit" class="submitBtn">verify</button>
+                    <div class="col-20">
+                     <button type="submit" class="submitBtn">verify</button>
+                   
+                    </div>
                 </div>
 
             </form>

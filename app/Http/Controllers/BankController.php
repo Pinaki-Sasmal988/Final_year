@@ -6,7 +6,9 @@ use App\Models\bank;
 use App\Models\bank_detail;
 use Illuminate\Http\Request;
 use App\Mail\SendMail;
+use App\Mail\ConfirmMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Session;
 
 class BankController extends Controller
 {
@@ -59,9 +61,11 @@ class BankController extends Controller
         $data->owen_name=$request->owen_name;
         $data->owen_ph=$request->owen_ph;
         $data->password=$request->password;
-        $data->owen_gov_id=$request->owen_gov_id;
+        $data->owen_gov_id=$request->owner_gov_id;
         $data->bank_reg_id=$request->bank_reg_id;
         $result=$data->save();
+        Mail::to($request->bank_email)->send(new ConfirmMail);
+        bank::destroy($request->id);
         if($result>0){
             $request->Session('message','Bank details verify Successfully');
             return redirect('admin');
