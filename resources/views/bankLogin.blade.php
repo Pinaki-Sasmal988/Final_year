@@ -12,9 +12,9 @@
 			<div class="container1">
 				<div class="signup-content">
 					<div class="signup-form">
-						<h2 class="form-title">User Login</h2>
+						<h2 class="form-title">Bank Login</h2>
 					
-						<form method="POST" action="/login" class="register-form" id="register-form">
+						<form method="POST" action="/bankLogin" class="register-form" id="register-form">
 							@csrf
 							<div class="form-group">
 								<label for="name"><i

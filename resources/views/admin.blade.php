@@ -23,7 +23,7 @@
     @endif
 
     <div class="container">
-        <header>Bank Registration Details</header>
+        <header>Bank Registration Verification</header>
         @foreach ($values as $item)
             <form method="POST" action="/verify">
               @csrf

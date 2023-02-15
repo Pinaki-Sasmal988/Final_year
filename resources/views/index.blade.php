@@ -48,16 +48,16 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="UserRegistration">User Registration</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="userRegistration">User Registration</a></li>
 						<li class="nav-item mx-0 mx-lg-1">
 						
 
-						<a class="nav-link py-3 px-0 px-lg-3 rounded" href="UserLogin">User Login</a></li>
+						<a class="nav-link py-3 px-0 px-lg-3 rounded" href="userLogin">User Login</a></li>
 
 						<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankRegister">Bank Register</a></li>
+						class="nav-link py-3 px-0 px-lg-13 rounded" href="BankRegister">Bank Registration</a></li>
 					   <li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankLogin">Bank Login</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="bankLogin">Bank Login</a></li>
 					
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>

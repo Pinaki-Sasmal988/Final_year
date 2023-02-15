@@ -21,8 +21,8 @@ class BankController extends Controller
         $data->pin=$request->pin;
         $data->service_time=$request->serv_time;
         $data->reg_no=$request->reg_no;
-        $data->owen_name=$request->owener_name;
-        $data->owen_ph=$request->owener_ph;
+        $data->owen_name=$request->owner_name;
+        $data->owen_ph=$request->owner_ph;
 
          $image1=$request->owen_gov_id;
          $name1=$image1->getClientOriginalName();
@@ -35,7 +35,7 @@ class BankController extends Controller
         $data->bank_reg_id=$name2;
         $data->password=$request->password;
         $result=$data->save();
-        Mail::to('pinakisasmal988@gmail.com')->send(new SendMail);
+        Mail::to($request->email)->send(new SendMail);
         if($result>0){
             $request->Session('message','Registered');
             return view('BankRegister');
@@ -79,7 +79,15 @@ class BankController extends Controller
         if($req->isMethod("POST")){
             $search=$req->pin;
          $data=bank_detail::where("pin","LIKE","%". $search . "%")->get();
-         return view("show",["data"=>$data]);
+         return view("bankShow",["data"=>$data]);
            }
     }
+     public function bankLogin(Request $req){
+       $data=bank_detail::where(['bank_email'=>$req->email,'password'=>$req->password])->first();
+       if($data){
+        $req->session()->put('value',$data);
+        return redirect('Dashboard');
+       }
+       
+     } 
 }

@@ -22,20 +22,27 @@ Route::get('/logout', function () {
     Session()->forget('user');
     return redirect('userLogin');
 });
-Route::view('/register','BankRegister');
-Route::view('/Dash','Dashboard');
+Route::get('/Logout', function () {
+    Session()->forget('value');
+    return redirect('bankLogin');
+});
+Route::view('/BankRegister','BankRegister');
+Route::view('/Dashboard','Dashboard');
 Route::view('/order','order');
 Route::view('/userLogin','userLogin');
 Route::view('/search','search');
-Route::view('/show','show');
+Route::view('/bankShow','bankShow');
 Route::view('/admin','admin');
-Route::view('/user','userRegistration');
+Route::view('/userRegistration','userRegistration');
+Route::view('/Bloodstock','Bloodstock');
+Route::view('/bankLogin','bankLogin');
+Route::view('/viewDetails','viewDetails');
 
 Route::get('/admin',[BankController::class,'fetch']);
 
 Route::POST('/search',[BankController::class,'search']);
 Route::post('/login',[UserController::class,'login']);
-
+Route::post('/bankLogin',[BankController::class,'bankLogin']);
 Route::post('/BankRegister',[BankController::class,'store']);
 Route::post('/verify',[BankController::class,'insert']);
 Route::post('/UserRegister',[UserController::class,'register']);

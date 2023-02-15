@@ -61,53 +61,75 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label>Bank Name</label>
-                                    <input type="text"   />
+                                    <input type="text"  name="name" required/>
                                 </div>
                                 <div class="input-field">
                                     <label> Bank Email</label>
-                                    <input type="email"   />
+                                    <input type="email"  name="email" required/>
                                 </div>
 
                                 <div class="input-field">
                                     <label>Mobile Number</label>
-                                    <input type="number" onkeyup="test(this)" />
+                                    <input type="number" onkeyup="test(this)" name="contact" required/>
                                     <h6 id="res"></h6>
                                 </div>
 
                                 <div class="input-field">
                                     <label>Bank Address</label>
-                                    <input type="text"  />
+                                    <input type="text" name="address" required/>
                                 </div>
                                 <div class="input-field">
                                     <label>Pin Code Number</label>
-                                    <input type="number"  />
+                                    <input type="number"  name="pin" required/>
                                 </div>
                                 <div class="input-field">
-                                    <label> Bank Service Time</label>
-                                    <input type="text"  />
+                                    <label>Select Service Time</label>
+                                    <select name="serv_time">
+                                        <option disabled="disabled" selected="selected">Select One Of Them</option>
+                                        <option value="24X7">24X7</option>
+                                        <option value="12X7">12X7</option>
+                                        <option value="8X7">8X7</option>
+                                    </select>
                                 </div>
+                                {{-- <div class="input-field">
+                                    <label> Bank Service Time</label>
+                                    <input type="text" name="serv_time" required/>
+                                </div> --}}
 
                                 <div class="input-field">
                                     <label>Bank Registration No</label>
-                                    <input type="text"  />
+                                    <input type="text"  name="reg_no" required/>
                                 </div>
 
                                 <div class="input-field">
                                     <label>Owner Name</label>
-                                    <input type="text" />
+                                    <input type="text" name="owner_name" required/>
                                 </div>
                                 <div class="input-field">
                                     <label>Owner Phone No</label>
-                                    <input type="number" onkeyup="test(this)" />
+                                    <input type="number" onkeyup="test(this)" name="owner_ph" required/>
                                 </div>
-                                
+                                {{-- message will be added in bankcobtroller --}}
+                                {{-- <div class="input-field">
+                                    <label>write about delivery & Payment</label>
+                                     <input type="text" id="" name="message" required/>
+                                 </div> --}}
+                                 <div class="input-field">
+                                    <label>Select Bank Type</label>
+                                    <select name="bloodgroup">
+                                        <option disabled="disabled" selected="selected">Select One Of Them</option>
+                                        <option value="Private">Private</option>
+                                        <option value="Government">Government</option>
+                                        
+                                    </select>
+                                </div>
                                 <div class="input-field">
                                    <label>Password</label>
-                                    <input type="password" id="password" />
+                                    <input type="password" id="password" name="password" required/>
                                 </div>
                                 <div class="input-field">
                                     <label>Enter Re-Password</label>
-                                     <input type="text" onkeyup="check(this)" />
+                                     <input type="text" onkeyup="check(this)" required/>
                                      <h6 id="res"></h6>
                                  </div>
                             </div>

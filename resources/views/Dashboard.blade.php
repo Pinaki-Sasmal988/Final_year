@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/style3.css">
     <style>
@@ -26,9 +27,10 @@
             background-position: center;
         }
 
-
+          
         a {
             text-decoration: none;
+            
         }
 
         li {
@@ -60,13 +62,16 @@
         .c {
             position: absolute;
             right: 0;
-            width: 100%;
-            height: 100vh;
+            width: 70%;
+            margin-left: 30%;
+            /* height: 100vh; */
+            height: auto;
         }
 
         .c .content {
             position: relative;
-            margin-top: 10vh;
+            margin-top: 5vh;
+            width: 90%;
             min-height: 90vh;
         }
 
@@ -108,42 +113,7 @@
 
 <body>
     <div class="main_box">
-        <div class="c">
-            <div class="content">
-                <div class="cards">
-                    <div class="card">
-                        <div class="box">
-                            <h1>21</h1>
-                            <h3>Uesrs</h3>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <h1>30</h1>
-                            <h3>Recent Visitor</h3>
-                        </div>
-                        <div class="icon-case">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <h1>34</h1>
-                            <h3>Orders</h3>
-                        </div>
-                        <div class="icon-case">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <h1>5000</h1>
-                            <h3>Income</h3>
-                        </div>
-                        <div class="icon-case">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <input type="checkbox" id="check">
         <div class="btn_one">
             <label for="check">
@@ -152,7 +122,7 @@
         </div>
         <div class="sidebar_menu">
             <div class="first">
-                <a href="#">Blood Bank</a>
+                <a href="#"><h6>{{ Session::get('value')['bank_name'] }}</h6></a>
             </div>
             <div class="btn_two">
                 <label for="check">
@@ -165,13 +135,79 @@
                     <li><a href="Bloodstock">Blood Stock</a></li>
                     <li><a href="order">Blood Orders</a></li>
                     <li><a href="#">Notification</a></li>
-                    <li><a href="conatct.html">Message</a></li>
+                    <li><a href="#">Message</a></li>
+                    <li><a href="/Logout">logout</a></li>
                 </ul>
             </div>
         </div>
+        <h1 class="h"> Dashboard </h1><br><br>
+        <h4><i>Insert Blood Unite Under The Form</i></h4>
+        <div class="c">
+            <div class="content">
+                
+                <form method="POST" action="/" >
+                    @csrf
+                    <div class="wholeform">
+                        <div class="details personal">                            
+                            <div class="fields">
+                                <div class="input-field">
+                                    <input type="hidden"  name="id" value="{{ Session::get('value')['id'] }}" readonly/>
+                                </div>
+                                <div class="input-field">
+                                    <label> A POSITIVE</label>
+                                    <input type="number"  name="APOS" required/>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>B POSITIVE</label>
+                                    <input type="number"  name="BPOS" required/>
+                                    
+                                </div>
+
+                                <div class="input-field">
+                                    <label>O POSITIVE</label>
+                                    <input type="text" name="OPOS" required/>
+                                </div>
+                                <div class="input-field">
+                                    <label>AB POSITIVE</label>
+                                    <input type="number"  name="ABPOS" required/>
+                                </div>
+                                <div class="input-field">
+                                    <label> A NEGETIVE</label>
+                                    <input type="text" name="ANEG" required/>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>B NEGETIVE</label>
+                                    <input type="text"  name="BNEG" required/>
+                                </div>
+
+                                <div class="input-field">
+                                    <label> O NEGETIVE</label>
+                                    <input type="text" name="ONEG" required/>
+                                </div>
+                                <div class="input-field">
+                                    <label> AB NEGETIVE</label>
+                                    <input type="text" name="ABNEG" required/>
+                                </div>
+                                
+                                <div class="input-field">
+                                    <label>write about delivery & Payment</label>
+                                     <textarea type="text" id="" name="message" required></textArea>
+                                 </div>
+                                
+                            </div>
+                        <button type="submit" class="submitBtn">Submit</button>
+                    </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        
 
 
-        <h1 class="h"> Dashboard </h1>
+        
 
        
     </div>

@@ -21,7 +21,7 @@
         </div>
         <div class="sidebar_menu">
             <div class="first">
-                <a href="#">Blood Bank</a>
+                <a href="#"><h6>{{ Session::get('value')['bank_name'] }}</h6></a>
             </div>
             <div class="btn_two">
                 <label for="check">
@@ -31,10 +31,11 @@
             <div class="menu">
                 <ul>
                     <li><a href="Dashboard">Dashboard</a></li>
-                    <li><a href="l">Blood Stock</a></li>
+                    <li><a href="Bloodstock">Blood Stock</a></li>
                     <li><a href="order">Blood Orders</a></li>
                     <li><a href="#">Notification</a></li>
-                    <li><a href="conatct.html"> Message </a></li>
+                    <li><a href="conatct"> Message </a></li>
+                    <li><a href="/Logout">logout</a></li>
                 </ul>
             </div>
         </div>
