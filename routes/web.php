@@ -46,4 +46,3 @@ Route::post('/bankLogin',[BankController::class,'bankLogin']);
 Route::post('/BankRegister',[BankController::class,'store']);
 Route::post('/verify',[BankController::class,'insert']);
 Route::post('/UserRegister',[UserController::class,'register']);
-// Route::get('/random',[UserController::class,'random']);
