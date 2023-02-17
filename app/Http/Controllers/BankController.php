@@ -23,6 +23,7 @@ class BankController extends Controller
         $data->reg_no=$request->reg_no;
         $data->owen_name=$request->owner_name;
         $data->owen_ph=$request->owner_ph;
+        $data->category=$request->category;
 
          $image1=$request->owen_gov_id;
          $name1=$image1->getClientOriginalName();
@@ -60,6 +61,7 @@ class BankController extends Controller
         $data->reg_no=$request->reg_no;
         $data->owen_name=$request->owen_name;
         $data->owen_ph=$request->owen_ph;
+        $data->category=$request->category;
         $data->password=$request->password;
         $data->owen_gov_id=$request->owner_gov_id;
         $data->bank_reg_id=$request->bank_reg_id;

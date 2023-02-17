@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('reg_no');
             $table->string('owen_name');
             $table->string('owen_ph');
+            $table->string('category');
             $table->string('owen_gov_id');
             $table->string('bank_reg_id');
             $table->string('password');

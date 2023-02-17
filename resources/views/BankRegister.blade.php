@@ -109,14 +109,9 @@
                                     <label>Owner Phone No</label>
                                     <input type="number" onkeyup="test(this)" name="owner_ph" required/>
                                 </div>
-                                {{-- message will be added in bankcobtroller --}}
-                                {{-- <div class="input-field">
-                                    <label>write about delivery & Payment</label>
-                                     <input type="text" id="" name="message" required/>
-                                 </div> --}}
                                  <div class="input-field">
                                     <label>Select Bank Type</label>
-                                    <select name="bloodgroup">
+                                    <select name="category">
                                         <option disabled="disabled" selected="selected">Select One Of Them</option>
                                         <option value="Private">Private</option>
                                         <option value="Government">Government</option>

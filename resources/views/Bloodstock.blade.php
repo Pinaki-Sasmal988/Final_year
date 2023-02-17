@@ -10,6 +10,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="css/style2.css">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
 
     <style>
         * {
@@ -17,24 +18,23 @@
         }
 
         body {
-            background-image: url(/blood1.png);
-            background-repeat: no-repeat;
+            min-height: 100vh;
+            background: url("images/blood1.png") no-repeat;
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            margin: 0;
         }
 
         .container {
-            padding: 20px;
-            margin-left: 18%;
-            width: 80%;
+            padding: 0px;
+            width: 70%;
+            margin-left: 25%;
         }
 
         .card {
             padding: 0%;
             border-radius: 100px;
-            margin-block-end: 35px;
+            margin-block-end: 30px;
             background-color: rgb(251, 246, 246)
         }
 
@@ -47,7 +47,9 @@
             border-radius: 25px;
         }
 
-
+        h3{
+            color: white;
+        }
         .h {
             color: #fb0909;
             border-block-end: 3px solid;
@@ -100,7 +102,7 @@
         </div>
         <div class="sidebar_menu">
             <div class="first">
-                <a href="#">Blood Bank</a>
+                <a href="#"><h5>{{ Session::get('value')['bank_name'] }}</h5></a>
             </div>
             <div class="btn_two">
                 <label for="check">
@@ -109,8 +111,8 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="Dashboard">Dashboard</a></li>
-                    <li><a href="Bloodstock">Blood Stock</a></li>
+                    <li><a href="Dashboard">Home</a></li>
+                    <li><a href="/bloodstock">Blood Stock</a></li>
                     <li><a href="order">Blood Orders</a></li>
                     <li><a href="#">Notification</a></li>
                     <li><a href="#">Message</a></li>
@@ -120,11 +122,10 @@
         </div>
 
         <h1 class="h"> Blood Stocks </h1>
-
-
-
+         
         <div class="container">
             <div class="row">
+                @foreach($data as $item)
                 <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
@@ -132,7 +133,7 @@
                                 <h2>A+ <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                22 ml (Available)
+                                <h3>{{ $item->APOS }} (ml)</h3>
                             </div>
                         </div>
                     </div>
@@ -144,7 +145,7 @@
                                 <h2>B+ <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                25 ml (Available)
+                                <h3>{{ $item->BPOS }} (ml)</h3>
                             </div>
                         </div>
                     </div>
@@ -156,7 +157,7 @@
                                 <h2>O+ <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                19 ml (Available)
+                               <h3> {{ $item->OPOS }} (ml)</h3>
                             </div>
                         </div>
                     </div>
@@ -168,11 +169,12 @@
                                 <h2>AB+ <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                27 ml (Available)
+                               <h3> {{ $item->ABPOS }} (ml)</h3>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
 
             <div class="row">
@@ -183,7 +185,7 @@
                                 <h2>A- <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                40 ml (Available)
+                               <h3> {{ $item->ANEG }} (ml)</h3>
                             </div>
                         </div>
                     </div>
@@ -195,7 +197,7 @@
                                 <h2>B- <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                15 ml (Available)
+                               <h3> {{ $item->BNEG }} (ml)</h3>
                             </div>
                         </div>
                     </div>
@@ -207,7 +209,7 @@
                                 <h2>O- <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                19 ml (Available)
+                               <h3> {{ $item->ONEG }} (ml)</h3>
                             </div>
                         </div>
                     </div>
@@ -219,11 +221,12 @@
                                 <h2>AB- <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                35 ml (Available)
+                                <h3>{{ $item->ABNEG }} (ml)</h3>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
             <hr>
             <br>

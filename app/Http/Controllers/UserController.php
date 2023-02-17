@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserMail;
+use App\Models\order;
 
 class UserController extends Controller
 {
@@ -38,5 +39,25 @@ class UserController extends Controller
         else{
             echo "does't matched";
         }
+    }
+    public function order(Request $req){
+        $data=new order;
+        $id=Session()->get('user')['id'];
+        $data->user_id=$id;
+        $data->bank_id=$req->bank_id;
+        $data->name=$req->name;
+        $data->address=$req->address;
+        $data->pin=$req->pin;
+        $data->ph_no=$req->ph_no;
+        $data->group=$req->group;
+        $data->quantity=$req->quantity;
+        $data->price=($req->quantity * 7);
+        $result=$data->save();
+        if($result>0){
+            // $req->session('text','booking is done but not confirm');
+            return view('search');
+        }
+
+
     }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\BloodController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -20,7 +21,7 @@ Route::get('/', function () {
 });
 Route::get('/logout', function () {
     Session()->forget('user');
-    return redirect('userLogin');
+    return view('index');
 });
 Route::get('/Logout', function () {
     Session()->forget('value');
@@ -37,8 +38,15 @@ Route::view('/userRegistration','userRegistration');
 Route::view('/Bloodstock','Bloodstock');
 Route::view('/bankLogin','bankLogin');
 Route::view('/viewDetails','viewDetails');
+Route::view('/afterSearch','afterSearch');
+Route::view('/booknow','booknow');
 
 Route::get('/admin',[BankController::class,'fetch']);
+Route::get('/bloodstock',[BloodController::class,'bloodStock']);
+Route::POST('/blood_details',[BloodController::class,'bloodDetails']);
+Route::get('/viewDetails{id}',[BloodController::class,'viewDetails']);
+Route::get('/booknow{id}',[BloodController::class,'booknow']);
+
 
 Route::POST('/search',[BankController::class,'search']);
 Route::post('/login',[UserController::class,'login']);
@@ -46,4 +54,6 @@ Route::post('/bankLogin',[BankController::class,'bankLogin']);
 Route::post('/BankRegister',[BankController::class,'store']);
 Route::post('/verify',[BankController::class,'insert']);
 Route::post('/UserRegister',[UserController::class,'register']);
+Route::post('/order',[UserController::class,'order']);
+
 // Route::get('/random',[UserController::class,'random']);

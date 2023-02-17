@@ -76,6 +76,10 @@
                                 <label>Owner Phone No</label>
                                 <input type="text" name="owen_ph" value="{{ $item['owen_ph'] }}" readonly/>
                             </div>
+                            <div class="input-field">
+                                <label>Bank Category</label>
+                                <input type="text" name="category" value="{{ $item['category'] }}" readonly/>
+                            </div>
                    
                             <div class="input-field">
                               
