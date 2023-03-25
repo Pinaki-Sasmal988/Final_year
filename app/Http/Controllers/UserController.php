@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserMail;
+use App\Models\admin;
 use App\Models\order;
 
 class UserController extends Controller
@@ -51,6 +52,7 @@ class UserController extends Controller
         $data->ph_no=$req->ph_no;
         $data->group=$req->group;
         $data->quantity=$req->quantity;
+        
         $data->price=($req->quantity * 7);
         $result=$data->save();
         if($result>0){
@@ -60,4 +62,15 @@ class UserController extends Controller
 
 
     }
+    public function adminLogin(Request $req){
+$data=admin::where(['email'=>$req->email,'password'=>$req->password])->first();
+if($data){
+    $req->session()->put('admin',$data);
+            return redirect('admin');
+        }
+        else{
+            echo "does't matched";
+        }
 }
+ }
+

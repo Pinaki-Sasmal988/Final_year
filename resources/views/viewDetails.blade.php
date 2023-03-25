@@ -17,7 +17,7 @@
     @foreach($data as $item)
     <h1 class="head1"> Details of Blood Bank</h1>
     <section id="single-bank-details">
-        <div class="container">
+        <div class="container2">
              
              <div id="bank-name">
                 <h2><strong> {{ $item->bank_name }}</strong> </h2>
@@ -26,6 +26,11 @@
                 <h4><b>Address: </b>{{$item->Address}}</h4>
                 {{ $item->id }}
              </div>
+            <div class="rules">
+                <h4>Rules And Regulation</h4>
+                {{ $item->message }}
+            </div>
+                
              
         </div>
     </section>

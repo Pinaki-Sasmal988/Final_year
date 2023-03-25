@@ -2,6 +2,16 @@
     padding: 0px;
     width: 100%;
     margin-top: 50px;
+    
+}
+.container2{
+  display: flex;
+  border: 2px solid;
+  padding: 5px;
+  margin: 15px;
+}
+.rules{
+  margin-left: 10%;
 }
 
 .card {

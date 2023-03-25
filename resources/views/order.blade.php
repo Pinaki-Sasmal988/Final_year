@@ -125,6 +125,7 @@
                     <p> <strong>Full Address:</strong> B-45 Maheshtala,Kolkata</p>
                     <p> <strong>Blood Group:</strong> O+</p>
                     <p> <strong>Unit:</strong> 200ml</p>
+                    <p> <strong>price:</strong> 600</p>
                 </div>
                 <button class="btn-order">Take Order</button>
                 <button class="btn-order">Cancel Order</button>
@@ -137,6 +138,7 @@
                     <p> <strong>Full Address:</strong> B-45 Maheshtala,Kolkata</p>
                     <p> <strong>Blood Group:</strong> A+</p>
                     <p> <strong>Unit:</strong> 300ml</p>
+                    <p> <strong>price:</strong> 900</p>
                 </div>
                 <button class="btn-order">Take Order</button>
                 <button class="btn-order">Cancel Order</button>
@@ -149,6 +151,7 @@
                     <p> <strong>Full Address:</strong> B-45 Maheshtala,Kolkata</p>
                     <p> <strong>Blood Group:</strong> O-</p>
                     <p> <strong>Unit:</strong> 300ml</p>
+                    <p> <strong>price:</strong> 900</p>
                 </div>
                 <button class="btn-order">Take Order</button>
                 <button class="btn-order">Cancel Order</button>

@@ -111,7 +111,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="Dashboard">Home</a></li>
+                    <li><a href="Dashboard">Dashboard</a></li>
                     <li><a href="/bloodstock">Blood Stock</a></li>
                     <li><a href="order">Blood Orders</a></li>
                     <li><a href="#">Notification</a></li>
@@ -235,20 +235,20 @@
 
             <div class="updateForm justify-item-center">
 
-                <form class="form-inline" method="POST">
-
+                <form class="form-inline" action="stockUpdate" method="post">
+                    @csrf
                     <div class="form-group mx-sm-3 mb-6">
-
+                      {{-- <input type="text" name="id" value="{{ Session::get('value')['id'] }}" /> --}}
                         <select name="bloodgroup" class="form-control">
                             <option disabled="disabled" selected="selected">Choose Blood Group</option>
-                            <option>O+</option>
-                            <option>O-</option>
-                            <option>A+</option>
-                            <option>A-</option>
-                            <option>B+</option>
-                            <option>B-</option>
-                            <option>AB+</option>
-                            <option>AB-</option>
+                            <option value="OPOS">O+</option>
+                            <option value="ONEG">O-</option>
+                            <option value="APOS">A+</option>
+                            <option value="ANEG">A-</option>
+                            <option value="BPOS">B+</option>
+                            <option value="BNEG">B-</option>
+                            <option value="ABPOS">AB+</option>
+                            <option value="ABNEG">AB-</option>
                         </select>
                     </div>
                     <div class="form-group mx-sm-3 mb-6">

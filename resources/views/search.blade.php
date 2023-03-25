@@ -110,7 +110,7 @@
                 <div class="search_box">
                     <input type="text" class="input" name="pin" placeholder="search...">
                     <div class="btn btn_common">
-                        {{-- <li><a href="search" class="fas fa-search"></a></li> --}}
+                        {{-- <a href="search" class="fas fa-search"></a> --}}
                         {{-- <input type="submit" class="fas fa-search" /> --}}
                         <button type="submit" class="fas fa-search"></button>
                     </div>

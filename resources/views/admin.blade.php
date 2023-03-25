@@ -10,7 +10,29 @@
     <link rel="stylesheet" href="css/style1.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    .lg{
+        margin-top: 15px;
 
+    }
+    a{
+        text-decoration: none;
+       
+    }
+    .col-25{
+        
+        display: flex;
+        
+    }
+    #btn1{
+       float: left;
+    }
+    #btn2{
+        float: right;
+        background-color: rgb(226, 87, 44);
+        color: white;
+    }
+    </style>
 </head>
 
 <body>
@@ -23,7 +45,8 @@
     @endif
 
     <div class="container">
-        <header>Bank Registration Verification</header>
+        <header>Bank Registration Verification <br> {{ Session::get('admin')['email'] }}</header>
+         <div class="lg"><a href="/adminLogout"> Logout </a></div>
         @foreach ($values as $item)
             <form method="POST" action="/verify">
               @csrf
@@ -104,9 +127,9 @@
                           <img class="img-thumbnail ms-6"  src="{{ asset('storage/images/'.$item['owen_gov_id']) }}" />                        </div>
 
                     </div>
-                    <div class="col-20">
-                     <button type="submit" class="submitBtn">verify</button>
-                   
+                    <div class="col-25">
+                     <button type="submit" id="btn1" class="submitBtn">verify</button>
+                     <button type="submit" id="btn2" class="submitBtn">cancel</button>
                     </div>
                 </div>
 

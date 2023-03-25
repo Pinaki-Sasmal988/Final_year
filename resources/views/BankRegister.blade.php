@@ -71,7 +71,7 @@
                                 <div class="input-field">
                                     <label>Mobile Number</label>
                                     <input type="number" onkeyup="test(this)" name="contact" required/>
-                                    <h6 id="res"></h6>
+                                    
                                 </div>
 
                                 <div class="input-field">

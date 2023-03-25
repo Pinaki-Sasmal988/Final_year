@@ -12,6 +12,18 @@
     <link rel="stylesheet" href="css/popup.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        .input-field input, select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    width: 200px;
+    margin: 4px 0;
+}
         * {
             margin: 0;
             padding: 0;
@@ -191,7 +203,7 @@
                 <div class="center">
                     
                     <input type="checkbox" id="show">
-                    <label for="show" class="show-btn">View Form</label>
+                    <label for="show" class="show-btn">Insert</label>
                     <div class="container">
                         
                         <label for="show" class="close-btn fas fa-times" title="close"></label>
@@ -245,7 +257,7 @@
                         </div>
             
                         <div class="input-field1">
-                            <label class="t1xt"> write about delivery & Payment </label>
+                            <label class="t1xt"> write about rules and regulation </label>
                             <textarea class="tx" type="text" id="" name="message" required></textArea>
                         </div>
                         <button type="submit" class="submitBtn">Submit</button>

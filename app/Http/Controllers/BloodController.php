@@ -42,4 +42,12 @@ class BloodController extends Controller
     public function booknow($id){
       return view('booknow',['id'=>$id]);
     }
+    public function stockUpdate(Request $req){ 
+          $id=session()->get('value')['id'];
+          $data=blood_detail::find($id);
+          $val=$req->bloodgroup;
+          $data->$val=$req->unit;
+          $data->save();
+          return view('Dashboard');
+    }
 }

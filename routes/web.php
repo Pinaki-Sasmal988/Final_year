@@ -19,13 +19,17 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/adminLogout', function () {
+    Session()->forget('admin');
+    return view('index');
+});
 Route::get('/logout', function () {
     Session()->forget('user');
     return view('index');
 });
 Route::get('/Logout', function () {
     Session()->forget('value');
-    return redirect('bankLogin');
+    return view('index');
 });
 Route::view('/BankRegister','BankRegister');
 Route::view('/Dashboard','Dashboard');
@@ -40,14 +44,14 @@ Route::view('/bankLogin','bankLogin');
 Route::view('/viewDetails','viewDetails');
 Route::view('/afterSearch','afterSearch');
 Route::view('/booknow','booknow');
+Route::view('/adminLogin','adminLogin');
 
 Route::get('/admin',[BankController::class,'fetch']);
 Route::get('/bloodstock',[BloodController::class,'bloodStock']);
-Route::POST('/blood_details',[BloodController::class,'bloodDetails']);
 Route::get('/viewDetails{id}',[BloodController::class,'viewDetails']);
 Route::get('/booknow{id}',[BloodController::class,'booknow']);
 
-
+Route::POST('/blood_details',[BloodController::class,'bloodDetails']);
 Route::POST('/search',[BankController::class,'search']);
 Route::post('/login',[UserController::class,'login']);
 Route::post('/bankLogin',[BankController::class,'bankLogin']);
@@ -55,5 +59,7 @@ Route::post('/BankRegister',[BankController::class,'store']);
 Route::post('/verify',[BankController::class,'insert']);
 Route::post('/UserRegister',[UserController::class,'register']);
 Route::post('/order',[UserController::class,'order']);
+Route::post('/adminLogin',[UserController::class,'adminLogin']);
+Route::post('/stockUpdate',[BloodController::class,'stockUpdate']);
 
 // Route::get('/random',[UserController::class,'random']);

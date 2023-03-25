@@ -89,6 +89,8 @@ class BankController extends Controller
        if($data){
         $req->session()->put('value',$data);
         return redirect('Dashboard');
+       }else{
+        echo "user Id or password does't matched";
        }
        
      } 

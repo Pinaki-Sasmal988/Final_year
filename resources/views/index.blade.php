@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -33,7 +36,7 @@
 	<!-- Masthead-->
 	 <header class="masthead bg-primary text-white text-center">
 			<!-- Masthead Avatar Image-->
-				<nav
+	<nav
 		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
 		id="mainNav">
 		<div class="container">
@@ -42,29 +45,49 @@
 				class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
 				type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-				aria-expanded="false" aria-label="Toggle navigation">
+				aria-expanded="true" aria-label="Toggle navigation">
 				Menu <i class="fas fa-bars"></i>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a
+					{{-- <li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="userRegistration">User Registration</a></li>
 						<li class="nav-item mx-0 mx-lg-1">
 						
 
-						<a class="nav-link py-3 px-0 px-lg-3 rounded" href="userLogin">User Login</a></li>
+						<a class="nav-link py-3 px-0 px-lg-3 rounded" href="userLogin">User Login</a></li> --}}
+                        
+						<li class="nav-item mx-0 mx-lg-1">
 
-						<li class="nav-item mx-0 mx-lg-1"><a
+							<div class="w3-dropdown-hover">
+								<button class="w3-button py-3 px-2 px-lg-4">REGISTRATION</button>
+								<div class="w3-dropdown-content w3-bar-block w3-card-4">
+								  <a href="userRegistration" class="w3-bar-item w3-button px-lg-20"> User Registration</a>
+								  <a href="BankRegister" class="w3-bar-item w3-button ">Bank Registration</a>
+								  
+								</div>
+							  </div>
+						</li>
+						<li class="nav-item mx-0 mx-lg-1">
+                        <div class="w3-dropdown-hover">
+							<button class="w3-button py-3 px-2 px-lg-5">LOGIN</button>
+							<div class="w3-dropdown-content w3-bar-block w3-card-4">
+							  <a href="bankLogin" class="w3-bar-item w3-button ">Bank Login</a>
+							  <a href="userLogin" class="w3-bar-item w3-button ">User Login</a>
+							</div>
+						  </div>
+						</li>
+						{{-- <li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-13 rounded" href="BankRegister">Bank Registration</a></li>
 					   <li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="bankLogin">Bank Login</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="bankLogin">Bank Login</a></li>--}}
 					
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
 						<li class="nav-item mx-0 mx-lg-1"><a
-							class="nav-link py-3 px-0 px-lg-3 rounded" href="admin">Admin</a></li>
+							class="nav-link py-3 px-0 px-lg-3 rounded" href="adminLogin">Admin</a></li> 
 					
 					
 				</ul>
@@ -128,6 +151,7 @@
 					registerd our portal.At first user create account to our portal and then login.After then they can search their nearest blood bank.
 				</i>
 				</p>
+				<h4>More than 100 people are benifited through our portel</h4>
 				</div>
 				{{-- <div class="col-lg-3 ms-auto">
 					<p class="lead">In this Platform there are severels number of blood bank thats have already 
