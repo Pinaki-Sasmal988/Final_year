@@ -31,7 +31,8 @@ class BloodController extends Controller
         $id=session()->get('value')['id'];
      $data=DB::table('bank_details')->join('blood_details','bank_details.id','=','blood_details.id')
        ->where('bank_details.id','=',$id)->select('*')->get();
-     return view("Bloodstock",["data"=>$data]);
+      return view("Bloodstock",["data"=>$data]);
+    
     }
     public function viewDetails($id){
 
@@ -50,4 +51,12 @@ class BloodController extends Controller
           $data->save();
           return view('Dashboard');
     }
+
+    public function showOrder(){
+      $id=session()->get('value')['id'];
+   $data=DB::table('bank_details')->join('orders','bank_details.id','=','orders.bank_id')
+     ->where('bank_details.id','=',$id)->select('*')->get();
+    return view("showorder",["data"=>$data]);
+      
+   }
 }

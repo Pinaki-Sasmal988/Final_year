@@ -33,7 +33,7 @@ Route::get('/Logout', function () {
 });
 Route::view('/BankRegister','BankRegister');
 Route::view('/Dashboard','Dashboard');
-Route::view('/order','order');
+ Route::view('/showorder','showorder');
 Route::view('/userLogin','userLogin');
 Route::view('/search','search');
 Route::view('/bankShow','bankShow');
@@ -50,6 +50,8 @@ Route::get('/admin',[BankController::class,'fetch']);
 Route::get('/bloodstock',[BloodController::class,'bloodStock']);
 Route::get('/viewDetails{id}',[BloodController::class,'viewDetails']);
 Route::get('/booknow{id}',[BloodController::class,'booknow']);
+Route::get('/showorder',[BloodController::class,'showOrder']);
+
 
 Route::POST('/blood_details',[BloodController::class,'bloodDetails']);
 Route::POST('/search',[BankController::class,'search']);
@@ -58,7 +60,7 @@ Route::post('/bankLogin',[BankController::class,'bankLogin']);
 Route::post('/BankRegister',[BankController::class,'store']);
 Route::post('/verify',[BankController::class,'insert']);
 Route::post('/UserRegister',[UserController::class,'register']);
-Route::post('/order',[UserController::class,'order']);
+// Route::post('/order',[UserController::class,'order']);
 Route::post('/adminLogin',[UserController::class,'adminLogin']);
 Route::post('/stockUpdate',[BloodController::class,'stockUpdate']);
 

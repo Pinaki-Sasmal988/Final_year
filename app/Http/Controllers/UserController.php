@@ -24,9 +24,12 @@ class UserController extends Controller
         $data->district=$req->district;
         $data->blood_group=$req->blood_group;
         $data->password=$req->password;
-        $result=$data->save();
-        if($result>0){
-            Mail::to($req->email)->send(new UserMail);
+        
+       
+        $result= Mail::to($req->email)->send(new UserMail($req->name));
+            // return view('userRegistration');
+        if($result){
+            $result=$data->save();
             return view('userRegistration');
         }
     }
@@ -52,7 +55,6 @@ class UserController extends Controller
         $data->ph_no=$req->ph_no;
         $data->group=$req->group;
         $data->quantity=$req->quantity;
-        
         $data->price=($req->quantity * 7);
         $result=$data->save();
         if($result>0){

@@ -8,6 +8,9 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use PhpParser\Node\Stmt\Global_;
+
+use function PHPUnit\Framework\returnValue;
 
 class UserMail extends Mailable
 {
@@ -18,9 +21,10 @@ class UserMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $name;
+    public function __construct( $name)
     {
-        //
+        $this->name=$name;
     }
 
     /**
@@ -40,11 +44,20 @@ class UserMail extends Mailable
      *
      * @return \Illuminate\Mail\Mailables\Content
      */
-    public function content()
+    // public function content()
+    // {
+    //     // return new Content(
+    //     //  view: 'email.UserMail',
+    //     // );
+    //     // Global $name;
+    //     // return view('email.UserMail')->with('name',$name);
+    //     return $this->view('email.UserMail')
+    //     ->with($this->name);
+    // }
+    public function build()
     {
-        return new Content(
-            view: 'email.UserMail',
-        );
+        return $this->view('email.UserMail')
+        ->with($this->name);
     }
 
     /**

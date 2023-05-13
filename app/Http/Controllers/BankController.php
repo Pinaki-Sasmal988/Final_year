@@ -9,6 +9,7 @@ use App\Mail\SendMail;
 use App\Mail\ConfirmMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Session;
+use Illuminate\Support\Facades\DB;  
 
 class BankController extends Controller
 {
@@ -94,4 +95,6 @@ class BankController extends Controller
        }
        
      } 
+
+    
 }

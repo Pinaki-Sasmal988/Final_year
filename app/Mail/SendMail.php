@@ -18,6 +18,7 @@ class SendMail extends Mailable
      *
      * @return void
      */
+    
     public function __construct()
     {
         //

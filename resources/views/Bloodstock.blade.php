@@ -113,7 +113,7 @@
                 <ul>
                     <li><a href="Dashboard">Dashboard</a></li>
                     <li><a href="/bloodstock">Blood Stock</a></li>
-                    <li><a href="order">Blood Orders</a></li>
+                    <li><a href="/showorder">Blood Orders</a></li>
                     <li><a href="#">Notification</a></li>
                     <li><a href="#">Message</a></li>
                     <li><a href="/Logout">logout</a></li>

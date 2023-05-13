@@ -29,8 +29,81 @@
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/index-styles.css" rel="stylesheet" />
+
+<style>
+	#bubble {
+        width: 100px;
+        height: 100px;
+        /* background-color: #007bff; */
+        background-image: linear-gradient(to bottom right, #007bff, #00ffff);
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      #bubble:hover {
+        transform: scale(1.1);
+      }
+
+      #messageBox {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        border-radius: 10px;
+      }
+
+      #message {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+	</style>
 </head>
 <body id="page-top">
+	
+    <div id="bubble" onclick="showMessageBox()"><img src="images/chatting.jpg" width="100" height="50" style="margin-bottom: 0; padding:10px"></div>
+
+    <div id="messageBox">
+      <label for="message">Enter your message:</label><button onclick="hideMessageBox()">X</button><br />
+      <input type="text" id="message" /><br />
+      <button onclick="hideMessageBox()">Submit</button>
+    </div>
 	<!-- Navigation-->
 
 	<!-- Masthead-->
@@ -298,5 +371,16 @@
 	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+	<script>
+		function showMessageBox() {
+		  document.getElementById("messageBox").style.display = "block";
+		  document.getElementById("bubble").style.display = "none";
+		}
+	
+		function hideMessageBox() {
+		  document.getElementById("messageBox").style.display = "none";
+		  document.getElementById("bubble").style.display = "block";
+		}
+	  </script>
 </body>
 </html>
