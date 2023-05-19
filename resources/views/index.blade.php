@@ -84,8 +84,8 @@
         font-weight: bold;
         margin-bottom: 10px;
       }
-      button {
-        background-color: #007bff;
+      .button1 {
+        background-color: #010c18;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -97,12 +97,12 @@
 </head>
 <body id="page-top">
 	
-    <div id="bubble" onclick="showMessageBox()"><img src="images/chatting.jpg" width="100" height="50" style="margin-bottom: 0; padding:10px"></div>
+    <div id="bubble" onclick="showMessageBox()">Chat Us</div>
 
     <div id="messageBox">
-      <label for="message">Enter your message:</label><button onclick="hideMessageBox()">X</button><br />
-      <input type="text" id="message" /><br />
-      <button onclick="hideMessageBox()">Submit</button>
+      <label for="message">Enter your message:</label><button class="button1" onclick="hideMessageBox()">X</button><br />
+      <textarea id="message"></textarea><br />
+      <button class="button1" onclick="hideMessageBox()">Submit</button>
     </div>
 	<!-- Navigation-->
 
@@ -292,7 +292,7 @@
 								placeholder="Enter your message here..." style="height: 10rem"
 								data-sb-validations="required"></textarea>
 							<label for="message">Message</label>
-							<div class="invalid-feedback" data-sb-feedback="message:required">A
+							<div class="invalid-feedback" >A
 								message is required.</div>
 						</div>
 						<!-- Submit success message-->

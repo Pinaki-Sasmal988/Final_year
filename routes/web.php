@@ -59,6 +59,8 @@ Route::post('/login',[UserController::class,'login']);
 Route::post('/bankLogin',[BankController::class,'bankLogin']);
 Route::post('/BankRegister',[BankController::class,'store']);
 Route::post('/verify',[BankController::class,'insert']);
+Route::get('/cancel{id}',[BankController::class,'cancel']);
+
 Route::post('/UserRegister',[UserController::class,'register']);
 // Route::post('/order',[UserController::class,'order']);
 Route::post('/adminLogin',[UserController::class,'adminLogin']);

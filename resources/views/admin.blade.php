@@ -1,148 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin verify</title>
-
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/style1.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<style>
-    .lg{
-        margin-top: 15px;
 
-    }
-    a{
-        text-decoration: none;
-       
-    }
-    .col-25{
-        
-        display: flex;
-        
-    }
-    #btn1{
-       float: left;
-    }
-    #btn2{
-        float: right;
-        background-color: rgb(226, 87, 44);
-        color: white;
-    }
-    </style>
 </head>
 
 <body>
-    {{-- "table table-striped table-hover"> --}}
-    @if (Session::get('message'))
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            {{ Session::get('message') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
+    <input type="checkbox" id="checkbox">
+    <header class="header">
+        <h2 class="u-name">
+            <label for="checkbox">
 
-    <div class="container">
+                <i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+        </h2>
         <header>Bank Registration Verification <br> {{ Session::get('admin')['email'] }}</header>
-         <div class="lg"><a href="/adminLogout"> Logout </a></div>
-        @foreach ($values as $item)
-            <form method="POST" action="/verify">
-              @csrf
-                <div class="wholeform">
-                    <div class="details personal">
-                        <span class="title"> Serial No {{ $item['id'] }}</span>
-                         <input type="hidden" name="id" value="{{ $item['id'] }}">
-                        <div class="fields">
-                            <div class="input-field">
-                                <label>Bank Name</label>
-                                <input type="text" name="bank_name" value="{{ $item['bank_name'] }}"
-                                    readonly />
-                            </div>
-                            <div class="input-field">
-                                <label>Email</label>
-                                <input type="email" name="bank_email" value="{{ $item['bank_email'] }}"
-                                    readonly />
-                            </div>
+        <i class="fa fa-user" aria-hidden="true"></i>
+    </header>
+    <div class="body">
+        <nav class="side-bar">
+            <div class="user-p">
+                <img src="images/user.png">
+                <h4>ADMIN</h4>
+            </div>
+            <ul>
+                <li>
+                    <a href="/admin">
+                        <i class="fa fa-desktop" aria-hidden="true"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                        <span>All Bank</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <span>Message</span>
+                    </a>
+                </li>
+                <!-- <li>
+     <a href="#">
+      <i class="fa fa-comment-o" aria-hidden="true"></i>
+      <span>Comment</span>
+     </a>
+    </li> -->
+                <li>
+                    <a href="#">
+                        <i class="fa fa-power-off" aria-hidden="true"></i>
+                        <span><a href="/adminLogout"> Logout </a></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-                            <div class="input-field">
-                                <label>Mobile Number</label>
-                                <input type="number" name="bank_ph_no"  value="{{ $item['bank_ph_no'] }}"
-                                    readonly />
-                            </div>
+        {{--  --}}
+        <section class="section-1">
+            @foreach ($values as $item)
+                <form method="POST" action="/verify">
+                    @csrf
+                    <div class="wholeform">
+                        <div class="details personal">
+                            <span class="title"> Serial No {{ $item['id'] }}</span>
+                            <input type="hidden" name="id" value="{{ $item['id'] }}">
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Bank Name</label>
+                                    <input type="text" name="bank_name" value="{{ $item['bank_name'] }}" readonly />
+                                </div>
+                                <div class="input-field">
+                                    <label>Email</label>
+                                    <input type="email" name="bank_email" value="{{ $item['bank_email'] }}"
+                                        readonly />
+                                </div>
 
-                            <div class="input-field">
-                                <label>Bank Address</label>
-                                <input type="text" name="address" value="{{ $item['Address'] }}" readonly>
-                            </div>
-                            <div class="input-field">
-                                <label>PIN Number</label>
-                                <input type="number" name="pin" value="{{ $item['pin'] }}"
-                                    readonly />
-                            </div>
-                            <div class="input-field">
-                                <label>Service Time</label>
-                                <input type="text" name="service_time" value="{{ $item['service_time'] }}" readonly />
-                            </div>
+                                <div class="input-field">
+                                    <label>Mobile Number</label>
+                                    <input type="number" name="bank_ph_no" value="{{ $item['bank_ph_no'] }}"
+                                        readonly />
+                                </div>
 
-                            <div class="input-field">
-                                <label>Bank Registration No</label>
-                                <input type="email" name="reg_no" value="{{ $item['reg_no'] }}" readonly />
-                            </div>
+                                <div class="input-field">
+                                    <label>Bank Address</label>
+                                    <input type="text" name="address" value="{{ $item['Address'] }}" readonly>
+                                </div>
+                                <div class="input-field">
+                                    <label>PIN Number</label>
+                                    <input type="number" name="pin" value="{{ $item['pin'] }}" readonly />
+                                </div>
+                                <div class="input-field">
+                                    <label>Service Time</label>
+                                    <input type="text" name="service_time" value="{{ $item['service_time'] }}"
+                                        readonly />
+                                </div>
 
-                            <div class="input-field">
-                                <label>Owner Name</label>
-                                <input type="text" name="owen_name" value="{{ $item['owen_name'] }}" readonly/>
+                                <div class="input-field">
+                                    <label>Bank Registration No</label>
+                                    <input type="email" name="reg_no" value="{{ $item['reg_no'] }}" readonly />
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Owner Name</label>
+                                    <input type="text" name="owen_name" value="{{ $item['owen_name'] }}" readonly />
+                                </div>
+                                <div class="input-field">
+                                    <label>Owner Phone No</label>
+                                    <input type="text" name="owen_ph" value="{{ $item['owen_ph'] }}" readonly />
+                                </div>
+                                <div class="input-field">
+                                    <label>Bank Category</label>
+                                    <input type="text" name="category" value="{{ $item['category'] }}" readonly />
+                                </div>
+
+                                <div class="input-field">
+
+                                    <input type="hidden" name="password" value="{{ $item['password'] }}" readonly />
+                                </div>
+                                <div class="input-field">
+
+                                    <input type="hidden" name="bank_reg_id" value="{{ $item['bank_reg_id'] }}"
+                                        readonly />
+                                </div>
+                                <div class="input-field">
+
+                                    <input type="hidden" name="owner_gov_id" value="{{ $item['owen_gov_id'] }}"
+                                        readonly />
+                                </div>
                             </div>
-                            <div class="input-field">
-                                <label>Owner Phone No</label>
-                                <input type="text" name="owen_ph" value="{{ $item['owen_ph'] }}" readonly/>
-                            </div>
-                            <div class="input-field">
-                                <label>Bank Category</label>
-                                <input type="text" name="category" value="{{ $item['category'] }}" readonly/>
-                            </div>
-                   
-                            <div class="input-field">
-                              
-                              <input type="hidden" name="password" value="{{ $item['password'] }}" readonly/>
-                          </div>
-                          <div class="input-field">
-                              
-                            <input type="hidden" name="bank_reg_id"  value="{{ $item['bank_reg_id'] }}" readonly/>
                         </div>
-                        <div class="input-field">
-                              
-                            <input type="hidden" name="owner_gov_id" value="{{ $item['owen_gov_id'] }}" readonly/>
+                        <h3>Verification Images</h3>
+                        <div class="images">
+                            <label>Bank Id:-</label>
+                            <div class="img">
+                                <img class="img-thumbnail ms-6"
+                                    src="{{ asset('storage/images/' . $item['bank_reg_id']) }}" width="480" />
+                            </div>
+                            <label>Owner Id:-</label>
+                            <div class="img">
+                                <img class="img-thumbnail ms-6"
+                                    src="{{ asset('storage/images/' . $item['owen_gov_id']) }}"width="480" />
+                            </div>
+
                         </div>
+                        <div class="col-ms-25">
+                            <button type="submit" id="btn1" class="submitBtn">Verify</button>
+                            <button id="btn2" class="submitBtn"><a href="/cancel{{ $item['id'] }}">Cancel</a></button>
                         </div>
+
                     </div>
 
-                    <h3>Verification Images</h3>
-                    <div class="images">
-                        <div class="img">
-                          <img class="img-thumbnail ms-6" src="{{ asset('storage/images/'.$item['bank_reg_id']) }}" />                        </div>
-                        <div class="img">
-                          <img class="img-thumbnail ms-6"  src="{{ asset('storage/images/'.$item['owen_gov_id']) }}" />                        </div>
+                </form>
+            @endforeach
 
-                    </div>
-                    <div class="col-25">
-                     <button type="submit" id="btn1" class="submitBtn">verify</button>
-                     <button type="submit" id="btn2" class="submitBtn">cancel</button>
-                    </div>
-                </div>
-
-            </form>
-        @endforeach
-
+        </section>
 
     </div>
-
-    
-
-
-
 
 </body>
 

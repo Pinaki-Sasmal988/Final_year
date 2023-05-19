@@ -17,7 +17,7 @@ class UserController extends Controller
     public function register(Request $req){
         $data= new User;
         $data->name=$req->name;
-        $value=$req->name;
+        // $value=$req->name;
         $data->ph_no=$req->ph_no;
         $data->email=$req->email;
         $data->address=$req->address;

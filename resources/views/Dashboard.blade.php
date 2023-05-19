@@ -89,7 +89,7 @@
         }
 
         .c .content .cards {
-            padding: 20px 15px;
+            /* padding: 15px 10px; */
             display: inline-flex;
             align-items: center;
             justify-content: space-between;
@@ -98,8 +98,8 @@
         }
 
         .c .content .cards .card {
-            width: 250px;
-            height: 159px;
+            width: 170px;
+            height: 130px;
             background: white;
             margin: 20px 10px;
             display: flex;
@@ -197,73 +197,6 @@
                             </div>
                         </div>
                     </div>
-               
-             <form action="/blood_details" method="post">
-                @csrf
-                <div class="center">
-                    
-                    <input type="checkbox" id="show">
-                    <label for="show" class="show-btn">Insert</label>
-                    <div class="container">
-                        
-                        <label for="show" class="close-btn fas fa-times" title="close"></label>
-                        <!-- <div class="text">
-                            Login Form
-                        </div> -->
-                     
-                        <div class="fields">
-                            <div class="input-field">
-                                <input type="hidden" name="id" value="{{ Session::get('value')['id'] }}" readonly />
-                            </div>
-                            <div class="input-field">
-                                <label> A POSITIVE</label>
-                                <input type="number" name="APOS" required />
-                            </div>
-            
-                            <div class="input-field">
-                                <label>B POSITIVE</label>
-                                <input type="number" name="BPOS" required />
-            
-                            </div>
-            
-                            <div class="input-field">
-                                <label>O POSITIVE</label>
-                                <input type="text" name="OPOS" required />
-                            </div>
-                            <div class="input-field">
-                                <label>AB POSITIVE</label>
-                                <input type="number" name="ABPOS" required />
-                            </div>
-                        </div>
-                        <div class="fields1">
-                            <div class="input-field">
-                                <label> A NEGETIVE</label>
-                                <input type="text" name="ANEG" required />
-                            </div>
-            
-                            <div class="input-field">
-                                <label>B NEGETIVE</label>
-                                <input type="text" name="BNEG" required />
-                            </div>
-            
-                            <div class="input-field">
-                                <label> O NEGETIVE</label>
-                                <input type="text" name="ONEG" required />
-                            </div>
-                            <div class="input-field">
-                                <label> AB NEGETIVE</label>
-                                <input type="text" name="ABNEG" required />
-                            </div>
-                        </div>
-            
-                        <div class="input-field1">
-                            <label class="t1xt"> write about rules and regulation </label>
-                            <textarea class="tx" type="text" id="" name="message" required></textArea>
-                        </div>
-                        <button type="submit" class="submitBtn">Submit</button>
-                     
-                    </div>
-                </form>
             
                 </div>
                 </div>

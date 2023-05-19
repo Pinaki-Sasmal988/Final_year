@@ -32,7 +32,7 @@
 					<td>{{ $item->id }}</td>
 					<td>{{ $item->bank_name }} </td>
 					<td>Private</td>
-					<td><span class="label label-success">Active</span></td>
+					<td><span class="label label-success">{{ Session::get('value')['bank_name']=null ? 'Active':'Closed' }}</span></td>
 					<td><a href="/viewDetails{{ $item->id }}" class="btn">View Details</a></td>
 				</tr>
         @endforeach

@@ -148,7 +148,7 @@
     <div class="btn_container">
        <button id="btn1" type="button" onclick="window.location.href = '/search'">Back</button>
        <button id="btn2" type="button" onclick="window.location.href = '/booknow{{ $item->id }}'">Order Blood</button> 
-    </div>   
+    </div>  
     @endforeach
 </body>
 </html>

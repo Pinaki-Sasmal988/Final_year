@@ -7,6 +7,7 @@ use App\Models\bank_detail;
 use Illuminate\Http\Request;
 use App\Mail\SendMail;
 use App\Mail\ConfirmMail;
+use App\Mail\RejectMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Session;
 use Illuminate\Support\Facades\DB;  
@@ -69,7 +70,7 @@ class BankController extends Controller
         $result=$data->save();
         Mail::to($request->bank_email)->send(new ConfirmMail);
         bank::destroy($request->id);
-        if($result>0){
+        if($result){
             $request->Session('message','Bank details verify Successfully');
             return redirect('admin');
         }else{
@@ -77,6 +78,12 @@ class BankController extends Controller
             return redirect('admin');
         }
 
+    }
+    public function cancel($id){
+        $data=bank::find($id);
+       Mail::to($data->bank_email)->send(new RejectMail($data->bank_name));
+       bank::destroy($id);
+       return redirect('admin');
     }
     public function search(Request $req){
         if($req->isMethod("POST")){
