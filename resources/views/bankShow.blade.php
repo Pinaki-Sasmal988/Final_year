@@ -20,7 +20,7 @@
 				<tr>
 					<th>Sl. No.</th>
 					<th>Bank Name</th>
-					<th>Catagory</th>
+					<th>Category</th>
 					<th>Status</th>
 					<th>Action</th>
 				</tr>

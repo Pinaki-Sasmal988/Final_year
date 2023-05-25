@@ -26,7 +26,7 @@
             width: 100%;
             padding: 20px;
             /* border: 5px solid #0097ff; */
-            height: 573px;
+            height: 506px;
             margin-left: -1px;
             border-radius: 5px;
             background: linear-gradient(45deg, #bad7cb, transparent);
@@ -38,9 +38,14 @@
             padding: 63px 0px 0 34px;
         }
 
+        .row{
+            background: antiquewhite;
+        }
+
         .row>[class*=col] {
             padding-left: 0px;
             padding-right: 15px;
+            background: antiquewhite;
         }
 
         p.b2 {
@@ -55,20 +60,38 @@
             color: #040404;
             font-weight: var(--s-bold);
         }
+        .search_wrap .search_box .input{
+            background: #f1f1f1;
+        }
 
         .mb--55 {
             margin-bottom: 42px;
         }
-        button{
-            background-color:#7690DA;
+
+        button {
+            background-color: #7690DA;
         }
-        .home-logout{
+
+        .home-logout {
             margin-top: 5px;
             margin-left: 25px;
         }
 
+        h4 {
+            margin-bottom: 18px;
+            margin-top: 17px;
+        }
+
+        .home-logout1 {
+            margin-left: 109px;
+            margin-top: -32px;
+            font-size: 18px;
+        }
+
+        .home-logout{
+            font-size: 18px;
+        }
         /*  */
-        
     </style>
 
 </head>
@@ -83,8 +106,9 @@
         <div class="row">
             <div class="col-xl-4 col-lg-6">
                 <div class="axil-signin-banner bg_image bg_image--10">
-                  <div class="home-logout">  <a href="index">Home</a> <a href="/logout">Logout</a></div>
-                 <h4>Welcome {{ Session::get('user')['name'] }} </h4>
+                    <div class="home-logout"> <a href="index">Home</a></div>
+                    <div class="home-logout1"> <a href="/logout">Logout</a></div>
+                    <h4>Welcome {{ Session::get('user')['name'] }} </h4>
                     <h3 class="title">We Will Direct You To The Nearest Blood Bank</h3>
                 </div>
             </div>
@@ -112,20 +136,20 @@
             <div class="search_wrap search_wrap_3">
                 <form action="/search" method="post">
                     @csrf
-                <div class="search_box">
-                    <input type="text" class="input" name="pin" placeholder="search...">
-                    <div class="btn btn_common">
-                        {{-- <a href="search" class="fas fa-search"></a> --}}
-                        {{-- <input type="submit" class="fas fa-search" /> --}}
-                        <button type="submit" class="fas fa-search"></button>
+                    <div class="search_box">
+                        <input type="text" class="input" name="pin" placeholder="search...">
+                        <div class="btn btn_common">
+                            {{-- <a href="search" class="fas fa-search"></a> --}}
+                            {{-- <input type="submit" class="fas fa-search" /> --}}
+                            <button type="submit" class="fas fa-search"></button>
+                        </div>
                     </div>
-                </div>
                 </form>
             </div>
         </div>
     </div>
 
-    
+
 </body>
 
 </html>

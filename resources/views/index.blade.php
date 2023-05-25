@@ -31,21 +31,28 @@
 <link href="css/index-styles.css" rel="stylesheet" />
 
 <style>
+	.chat{
+		background-color: #007bff;
+		background: #00ffff;
+	}
+	
 	#bubble {
-        width: 100px;
-        height: 100px;
-        /* background-color: #007bff; */
-        background-image: linear-gradient(to bottom right, #007bff, #00ffff);
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        border: 2px solid #fff;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        animation: pulse 2s ease-in-out infinite;
-      }
+    width: 70px;
+    height: 70px;
+    /* background-color: #007bff; */
+    background-image: linear-gradient(to bottom right, #007bff, #00ffff);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 13px;
+    margin-right: 11px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
 
       @keyframes pulse {
         0% {
@@ -92,6 +99,10 @@
         padding: 10px 20px;
         cursor: pointer;
       }
+
+	  .container1{
+		background-color: #00ffff;
+	  }
 
 	</style>
 </head>
@@ -161,8 +172,6 @@
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
 						<li class="nav-item mx-0 mx-lg-1"><a
 							class="nav-link py-3 px-0 px-lg-3 rounded" href="adminLogin">Admin</a></li> 
-					
-					
 				</ul>
 			</div>
 		</div>
@@ -203,6 +212,7 @@
 		
 	</header>
 	
+	
 	<!-- About Section-->
 	<section class="page-section bg-primary text-white mb-0" id="about">
 		<div class="container">
@@ -226,6 +236,8 @@
 				</p>
 				<h4>More than 100 people are benifited through our portel</h4>
 				</div>
+				
+
 				{{-- <div class="col-lg-3 ms-auto">
 					<p class="lead">In this Platform there are severels number of blood bank thats have already 
 						register our portal.At first user create account to our portal and then login.

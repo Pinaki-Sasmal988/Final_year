@@ -12,6 +12,53 @@
     background-color: rgb(235, 122, 122);
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 } */
+.h3, h3 {
+    font-size: 1.75rem;
+    font-family: serif;
+    color: black;
+    text-align: center;
+}
+h6 {
+    color: red;
+}
+
+header {
+    color: #b10000;
+    text-align: center;
+    font-size: 43px;
+    border-bottom: 2px solid;
+    font-family: serif;
+}
+
+form .wholeform {
+    padding-left: 84px;
+    padding-right: 84px;
+    border-radius: 119px;
+    /* transition: 0.3s ease; */
+    padding-top: 40px;
+    padding-bottom: 50px;
+    margin-top: 25px;
+    background: linear-gradient(146deg, #aee6f1, #fba9a9);
+}
+
+body {
+    margin: 0;
+    font-family: serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background: linear-gradient(101deg, #f79090, #87d5e5);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.submitBtn {
+    margin-top: 118px;
+    margin-left: 40%;
+    border-radius: 14px;
+    width: 280px;
+}
 
 a{
     text-decoration: none;
@@ -22,15 +69,15 @@ form{
     margin-top: 16px;
     width: auto;
     min-height: 600px;
-    background-color: rgb(247, 245, 245);
+    /* background-color: rgb(247, 245, 245); */
     overflow: hidden;
 }
-form .wholeform{
-    /* position: absolute; */
+/* form .wholeform{
+    position: absolute;
     background-color: rgb(247, 245, 245);
     padding-left: 50px;
-    /* transition: 0.3s ease; */
-}
+    transition: 0.3s ease;
+} */
 form.secActive .wholeform{
     opacity: 0;
     pointer-events: none;
@@ -57,10 +104,11 @@ form .fields .input-field{
     flex-direction: column;
     margin: 4px 0;
 }
-.input-field label{
-    font-size: 12px;
+.input-field label {
+    font-size: 16px;
+    font-family: serif;
     font-weight: 500;
-    color: #2e2e2e;
+    color: #000000;
 }
 .input-field input, select{
     outline: none;
@@ -109,12 +157,8 @@ button{
     transition: all 0.3s linear;
     cursor: pointer;
 }
-.submitBtn{
-    margin-top: 10px;
-    margin-left: 40%;
-}
 button:hover{
-    background-color: #265df2;
+    background-color: #ce1313;
 }
 
 @media (max-width: 750px) {

@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+	<style>
+		h2{
+			color: #000;
+		}
+	</style>
 </head>
 <body>
     <div class="main">

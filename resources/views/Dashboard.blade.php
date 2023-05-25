@@ -12,24 +12,31 @@
     <link rel="stylesheet" href="css/popup.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-        .input-field input, select {
-    outline: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 42px;
-    width: 200px;
-    margin: 4px 0;
-}
+
+        .input-field input,
+        select {
+            outline: none;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            padding: 0 15px;
+            height: 42px;
+            width: 200px;
+            margin: 4px 0;
+        }
+
         * {
-            margin: 0;
+            /* margin: 0; */
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            text-align-last: center;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
         }
 
         body {
@@ -40,10 +47,34 @@
             background-position: center;
         }
 
-          
+        .main_box .btn_one i {
+            color: rgb(19, 15, 1);
+            font-size: 30px;
+            font-weight: 700;
+            position: absolute;
+            left: 16px;
+            line-height: 60px;
+            margin-top: -70px;
+            cursor: pointer;
+            opacity: 1;
+            transition: all 0.3s linear;
+        }
+
+        .main_box .sidebar_menu {
+            position: fixed;
+            height: 100vh;
+            margin-top: -78px;
+            margin-left: -1px;
+            width: 280px;
+            background: linear-gradient(rgb(250, 174, 240), rgb(236, 186, 122));
+            box-shadow: 0px 0px 6px linear-gradient(rgb(232, 138, 219), rgb(236, 186, 122));
+            overflow: hidden;
+            transition: all 0.3s linear;
+        }
+
         a {
             text-decoration: none;
-            
+
         }
 
         li {
@@ -53,13 +84,22 @@
         h1,
         h2 {
             color: #444;
+            font-size: 25px;
         }
 
         h3 {
             color: rgb(255 0 0);
+            font: 20px;
         }
 
-
+        h2 {
+            color: #fb0909;
+            border-block-end: 3px solid;
+            border-block-end-width: 2px;
+            text-align: center;
+            font-size: 50px;
+            font-family: ui-sans-serif;
+        }
 
         table {
             padding: 10px;
@@ -95,11 +135,13 @@
             justify-content: space-between;
             flex-wrap: wrap;
             margin-top: -7px;
+            margin-left: -55px;
         }
 
         .c .content .cards .card {
-            width: 170px;
+            width: 180px;
             height: 130px;
+            padding: 45px;
             background: white;
             margin: 20px 10px;
             display: flex;
@@ -110,7 +152,19 @@
             justify-content: center;
         }
 
+        .btn_one {
+            height: 0;
+            width: 0;
+        }
 
+        .btn_two {
+            height: 0;
+            width: 0;
+        }
+
+        .bt {
+            margin-top: 6px;
+        }
 
         @media screen and (max-width:536px) {
             .brand-name h1 {
@@ -121,17 +175,179 @@
                 justify-content: center;
             }
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin: 11vh auto;
+            width: 50%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 5px;
+            margin-right: 430px;
+        }
+
+        table {
+            width: 100%;
+            box-shadow: 15px 15px #0000000d;
+            border-collapse: collapse;
+        }
+
+        tr:nth-of-type(odd) {
+            background-color: #006cc6;
+            color: #fff;
+        }
+
+        tr:nth-of-type(even) {
+            background-color: #fff;
+            color: #333;
+        }
+
+        th {
+            background-color: #3d7c81;
+            color: #fff;
+            font-weight: 800;
+            font-size: 20px;
+        }
+
+        td,
+        th {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .label {
+            display: inline;
+            padding: 0.2em 0.6em 0.3em;
+            font-size: 75%;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25em;
+        }
+
+        .label-success {
+            background-color: #5cb85c;
+        }
+
+        .label-warning {
+            background-color: #f0ad4e;
+        }
+
+        .label-danger {
+            background-color: #d9534f;
+        }
+
+        .btn {
+            color: #fff;
+            background-color: #37BC9B;
+            font-size: 13px;
+            padding: 5px 8px;
+            border: none;
+            margin: -2px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #2e9c81;
+        }
+
+
+        @media only screen and (max-width:768px),
+        (min-device-width:768px) and (max-device-width:992px) {
+            .table-container {
+                width: 95%;
+                background: transparent;
+            }
+
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+
+            td::before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-size: 16px;
+                font-weight: 600;
+                text-align: left;
+            }
+
+            td:nth-of-type(1)::before {
+                content: "Sl. No.";
+            }
+
+            td:nth-of-type(2)::before {
+                content: "Bank Name";
+            }
+
+            td:nth-of-type(3)::before {
+                content: "Catagory";
+            }
+
+            td:nth-of-type(4)::before {
+                content: "Status";
+            }
+
+            td:nth-of-type(6)::before {
+                content: "Action";
+            }
+
+
+
+        }
     </style>
 </head>
+<h2 class="h"> Dashboard </h2>
 {{-- @if (Session::get('message'))
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
  {{Session::get('message')}}
- @else {{ "" }}
- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>   
+@else {{ "" }}
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 @endif --}}
+
 <body>
-  
     <div class="main_box">
 
         <input type="checkbox" id="check">
@@ -142,7 +358,9 @@
         </div>
         <div class="sidebar_menu">
             <div class="first">
-                <a href="#"> <h6><i>{{ Session::get('value')['bank_name'] }}</i></h6></a>
+                <a href="#">
+                    <h6><i>{{ Session::get('value')['bank_name'] }}</i></h6>
+                </a>
             </div>
             <div class="btn_two">
                 <label for="check">
@@ -163,7 +381,7 @@
         {{-- <h4><i>Welcome {{ Session::get('value')['bank_name'] }}</i></h4> --}}
         <div class="c">
             <div class="content">
-                
+
                 <div class="content">
                     <div class="cards">
                         <div class="card">
@@ -182,36 +400,83 @@
                         </div>
                         <div class="card">
                             <div class="box">
-                                <h1>34</h1>
-                                <h3>Orders</h3>
-                            </div>
-                            <div class="icon-case">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="box">
                                 <h1>5000</h1>
                                 <h3>Income</h3>
                             </div>
                             <div class="icon-case">
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="box">
+                                <h1>34</h1>
+                                <h3>Approved Request</h3>
+                            </div>
+                            <div class="icon-case">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="box">
+                                <h1>34</h1>
+                                <h3>Reject Request</h3>
+                            </div>
+                            <div class="icon-case">
+                            </div>
+                        </div>
                     </div>
-            
+
                 </div>
-                </div>
-                </div>
-            
-                
             </div>
         </div>
-        
-
-
-        
-
-       
     </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl. No.</th>
+                    <th>User Name</th>
+                    <th>Blood Group</th>
+                    <th>Ordered Blood(Unit)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Priya Pal</td>
+                    <td>A+</td>
+                    <td>2</td>
+                    
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Tusar Halder</td>
+                    <td>O+</td>
+                    <td>3</td>
+                    
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Rahul Pal</td>
+                    <td>AB+</td>
+                    <td>2</td>
+                    
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Priti Gure</td>
+                    <td>A+</td>
+                    <td>4</td>
+                    
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
 </body>
 
 </html>
