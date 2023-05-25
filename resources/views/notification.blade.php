@@ -5,6 +5,7 @@
         $total=BankController::countOrder();
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +19,7 @@
     <link rel="stylesheet" href="css/style3.css">
     <style>
         /* * {
-            text-align: 0px;
+            text-align: center;
         } */
 
         body {
@@ -29,11 +30,69 @@
             background-position: center;
             margin: 0;
         }
-        
        a{
         text-decoration: none;
        }
-        
+        .container {
+            padding: 0px;
+            width: 70%;
+            margin-left: 25%;
+        }
+
+        .card {
+            padding: 0%;
+            border-radius: 100px;
+            margin-block-end: 30px;
+            background-color: rgb(251, 246, 246)
+        }
+
+        .card-body {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding: 1.25rem;
+            background-color: red;
+            border-radius: 25px;
+        }
+
+
+        .h {
+            color: #fb0909;
+            border-block-end: 3px solid;
+            border-block-end-width: 2px;
+            margin-left: 30%;
+            margin-right: 30%;
+            text-align: center;
+            font-size: 50px;
+            font-family: ui-sans-serif;
+            margin-bottom: 48px;
+        }
+
+        .text-center {
+            text-align: center;
+            font-size: 50px;
+            font-family: ui-sans-serif;
+        }
+
+        .updateForm {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5%;
+        }
+
+        .btn_one {
+            height: 0;
+            width: 0;
+        }
+
+        .btn_two {
+            height: 0;
+            width: 0;
+        }
+
+        .bt {
+            margin-top: 6px;
+        }
         </style>
 </head>
 
@@ -57,40 +116,22 @@
             <div class="menu">
                 <ul>
                     <li><a href="Dashboard">Dashboard</a></li>
-                    <li><a href="/addStock">AddStock</a></li>
                     <li><a href="/bloodstock">Blood Stock</a></li>
-                    <li><a href="/showorder">Blood Orders</a></li>
+                    <li><a href="showorder">Blood Orders</a></li>
                     <li><a href="#">Notification({{ $total }})</a></li>
-                    <li><a href="/message"> Message </a></li>
+                    <li><a href="#"> Message </a></li>
                     <li><a href="/Logout">logout</a></li>
                 </ul>
             </div>
         </div>
 
         <h1 class="h">All Orders </h1>
+        <div class="container">
+            <div class="row">
+                <h3>Notification</h3>
+        </div>
         <section id="order">
-            @foreach($data as $item)
-            <form method="post" action="/confirmOrder" >
-                @csrf
-            <div class="order-box"> 
-                <div class="order-details">
-                    <input type="text"  name="order_id" value="{{$item->order_id }}" readonly>
-                   <input type="hidden"  name="user_id" value="{{$item->user_id }}" readonly>
-                    <input type="hidden" name="bank_id" value="{{$item->bank_id }}" readonly>
-                    <p> <strong>Name:</strong><input type="text" name="name" value="{{ $item->name }}" readonly></p>
-                    <p> <strong>Mobile No:</strong><input type="text" name="ph_no" value="{{ $item->ph_no }}" readonly></p>
-                    <p> <strong>Full Address:</strong><input type="text" name="address" value="{{ $item->address }}" readonly></p>
-                    <p> <strong>Blood Group:</strong> <input type="text" name="group" value="{{ $item->group }}" readonly></p>
-                    <p> <strong>Unit:</strong> <input type="number" name="quantity" value="{{ $item->quantity }}" readonly></p>
-                    <p> <strong>Card:</strong> <input type="text" name="card" value="{{ $item->card }}" readonly></p>
-                    <p> <strong>price:</strong><input type="text" name="price" value="{{ $item->price }}" readonly></p>
-                </div>
-                <button type="submit" class="btn-order">Take Order</button>
-                <button class="btn-order" style="background-color: #fb0909"><a href="/ordercancel{{ $item->order_id }}">Cancel Order</a></button>
-                
-            </div>
-            </form>
-            @endforeach
+           
         </section>
 
         {{-- <section id="pagination" class="section-p1">

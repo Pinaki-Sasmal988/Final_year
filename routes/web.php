@@ -32,12 +32,12 @@ Route::get('/Logout', function () {
     return view('index');
 });
 Route::view('/BankRegister','BankRegister');
-Route::view('/Dashboard','Dashboard');
+Route::view('/message','message');
  Route::view('/showorder','showorder');
 Route::view('/userLogin','userLogin');
 Route::view('/search','search');
 Route::view('/bankShow','bankShow');
-Route::view('/admin','admin');
+Route::view('/adminDashboard','adminDashboard');
 Route::view('/userRegistration','userRegistration');
 Route::view('/Bloodstock','Bloodstock');
 Route::view('/bankLogin','bankLogin');
@@ -45,12 +45,18 @@ Route::view('/viewDetails','viewDetails');
 Route::view('/afterSearch','afterSearch');
 Route::view('/booknow','booknow');
 Route::view('/adminLogin','adminLogin');
+Route::view('/notification','notification');
+Route::view('/addStock','addStock');
 
-Route::get('/admin',[BankController::class,'fetch']);
+
+Route::get('/Dashboard',[UserController::class,'userAllRecords']);
+Route::get('/adminDashboard',[BankController::class,'allRecords']);
+Route::get('/adminVerify',[BankController::class,'fetch']);
 Route::get('/bloodstock',[BloodController::class,'bloodStock']);
 Route::get('/viewDetails{id}',[BloodController::class,'viewDetails']);
 Route::get('/booknow{id}',[BloodController::class,'booknow']);
-Route::get('/showorder',[BloodController::class,'showOrder']);
+Route::get('/showorder',[BloodController::class,'showOrder']);//checked showorder
+Route::get('/adminShowBank',[BankController::class,'showBank']);
 
 
 Route::POST('/blood_details',[BloodController::class,'bloodDetails']);
@@ -58,12 +64,13 @@ Route::POST('/search',[BankController::class,'search']);
 Route::post('/login',[UserController::class,'login']);
 Route::post('/bankLogin',[BankController::class,'bankLogin']);
 Route::post('/BankRegister',[BankController::class,'store']);
-Route::post('/verify',[BankController::class,'insert']);
+Route::post('/adminVerify',[BankController::class,'insert']);
 Route::get('/cancel{id}',[BankController::class,'cancel']);
 
 Route::post('/UserRegister',[UserController::class,'register']);
-// Route::post('/order',[UserController::class,'order']);
+ Route::post('/order',[UserController::class,'order']);
 Route::post('/adminLogin',[UserController::class,'adminLogin']);
-Route::post('/stockUpdate',[BloodController::class,'stockUpdate']);
-
+Route::POST('/stockUpdate',[BloodController::class,'stockUpdate']);
+Route::post('/confirmOrder',[BankController::class,'confirmOrder']);
+Route::get('/ordercancel{id}',[BankController::class,'ordercancel']);
 // Route::get('/random',[UserController::class,'random']);

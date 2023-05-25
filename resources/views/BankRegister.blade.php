@@ -163,41 +163,7 @@
         //  if(obj=="success"){
         // 	 swal("Congratualation","Your Account Created","success");
         //  }
-
-        var password = document.getElementById('password');
-
-        function check(ele) {
-            if (ele.value.length > 0) {
-                if (ele.value != password.value) {
-                    document.getElementById('res').innerText = "password does't mach";
-                } else {
-                    document.getElementById('res').innerText = "";
-
-                }
-            } else {
-                document.getElementById('res').innerText = "Enter confirm password";
-
-            }
-        }
-
-        function test(ele) {
-
-            if (isNaN(ele.value)) {
-                document.getElementById('res').style.color = "red";
-                //document.getElementById('result').innerText="Enter Only Number";
-                alert("Enter Only Number");
-            } else {
-                document.getElementById('res').innerText = "";
-
-                if (ele.value.length > 9) {
-                    // document.getElementById('result').innerText="mobile number only will be 10 digit ";
-                    alert("mobile number only will be 10 digit");
-                }
-
-            }
-
-        }
-    </script>
+</script>
 
 </body>
 

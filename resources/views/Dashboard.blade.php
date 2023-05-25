@@ -1,3 +1,10 @@
+<?php
+use App\HTTP\Controllers\BankController;
+$total = 0;
+if (Session::has('value')) {
+    $total = BankController::countOrder();
+}
+?>
 <html lang="en">
 
 <head>
@@ -10,6 +17,10 @@
     <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/style3.css">
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
@@ -26,17 +37,26 @@
             width: 200px;
             margin: 4px 0;
         }
+<<<<<<< HEAD
 
+=======
+        .w-5{
+      display: none;
+    }
+>>>>>>> 5a20b5b2bc503857f903f4592979088b28e027d2
         * {
             /* margin: 0; */
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+<<<<<<< HEAD
         }
 
         h1,
         h2 {
             text-align: center;
+=======
+>>>>>>> 5a20b5b2bc503857f903f4592979088b28e027d2
         }
 
         body {
@@ -47,6 +67,7 @@
             background-position: center;
         }
 
+<<<<<<< HEAD
         .main_box .btn_one i {
             color: rgb(19, 15, 1);
             font-size: 30px;
@@ -71,6 +92,8 @@
             overflow: hidden;
             transition: all 0.3s linear;
         }
+=======
+>>>>>>> 5a20b5b2bc503857f903f4592979088b28e027d2
 
         a {
             text-decoration: none;
@@ -115,19 +138,24 @@
         .c {
             position: absolute;
             right: 0;
-            width: 70%;
+            width: 75%;
             margin-left: 30%;
             /* height: 100vh; */
             height: auto;
         }
 
         .c .content {
+            background-color: white;
             position: relative;
             margin-top: 5vh;
             width: 90%;
-            min-height: 90vh;
+            min-height: 95vh;
+            /* height: auto; */
         }
-
+        .c .content p{
+        text-align: center;
+        text-emphasis: 10px;
+        }
         .c .content .cards {
             /* padding: 15px 10px; */
             display: inline-flex;
@@ -348,6 +376,10 @@
 @endif --}}
 
 <body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a20b5b2bc503857f903f4592979088b28e027d2
     <div class="main_box">
 
         <input type="checkbox" id="check">
@@ -370,10 +402,11 @@
             <div class="menu">
                 <ul>
                     <li><a href="Dashboard">Dashboard</a></li>
+                    <li><a href="/addStock">AddStock</a></li>
                     <li><a href="/bloodstock">Blood Stock</a></li>
                     <li><a href="showorder">Blood Orders</a></li>
-                    <li><a href="#">Notification</a></li>
-                    <li><a href="#">Message</a></li>
+                    <li><a href="#">Notification({{ $total }})</a></li>
+                    <li><a href="message">Message</a></li>
                     <li><a href="/Logout">logout</a></li>
                 </ul>
             </div>
@@ -382,8 +415,13 @@
         <div class="c">
             <div class="content">
 
+<<<<<<< HEAD
                 <div class="content">
                     <div class="cards">
+=======
+            {{-- <div class="content"> --}}
+            <div class="cards">
+>>>>>>> 5a20b5b2bc503857f903f4592979088b28e027d2
                         <div class="card">
                             <div class="box">
                                 <h1>21</h1>
@@ -393,6 +431,7 @@
                         <div class="card">
                             <div class="box">
                                 <h1>30</h1>
+<<<<<<< HEAD
                                 <h3>Recent Visitor</h3>
                             </div>
                             <div class="icon-case">
@@ -401,11 +440,14 @@
                         <div class="card">
                             <div class="box">
                                 <h1>5000</h1>
+=======
+>>>>>>> 5a20b5b2bc503857f903f4592979088b28e027d2
                                 <h3>Income</h3>
                             </div>
                             <div class="icon-case">
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="card">
                             <div class="box">
                                 <h1>34</h1>
@@ -427,6 +469,108 @@
                 </div>
             </div>
         </div>
+=======
+                        
+                    </div> 
+             <p><i>All User Records In Our Bank</i></p>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr class="table-primary">
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Group</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Delivery Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($data as $item)
+                    <tr>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->address }}</td>
+                        <td>{{ $item->ph_no }}</td>
+                        <td>{{ $item->group }}</td>
+                        <td>{{ $item->quantity }}</td>
+                        <td>{{ $item->price }}</td>
+                        <td>{{ $item->created_at }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+           <p><i> {{ $data->links() }}</i></p>
+        </div>
+
+
+
+        <div class="">
+
+            {{--  <form action="/blood_details" method="post">
+                @csrf
+                     
+                        <div class="fields">
+                            <div class="input-field">
+                                <input type="hidden" name="id" value="{{ Session::get('value')['id'] }}" readonly />
+                            </div>
+                            <div class="input-field">
+                                <label> A POSITIVE</label>
+                                <input type="number" name="APOS" required />
+                            </div>
+            
+                            <div class="input-field">
+                                <label>B POSITIVE</label>
+                                <input type="number" name="BPOS" required />
+            
+                            </div>
+            
+                            <div class="input-field">
+                                <label>O POSITIVE</label>
+                                <input type="text" name="OPOS" required />
+                            </div>
+                            <div class="input-field">
+                                <label>AB POSITIVE</label>
+                                <input type="number" name="ABPOS" required />
+                            </div>
+                        </div>
+                        <div class="fields1">
+                            <div class="input-field">
+                                <label> A NEGETIVE</label>
+                                <input type="text" name="ANEG" required />
+                            </div>
+            
+                            <div class="input-field">
+                                <label>B NEGETIVE</label>
+                                <input type="text" name="BNEG" required />
+                            </div>
+            
+                            <div class="input-field">
+                                <label> O NEGETIVE</label>
+                                <input type="text" name="ONEG" required />
+                            </div>
+                            <div class="input-field">
+                                <label> AB NEGETIVE</label>
+                                <input type="text" name="ABNEG" required />
+                            </div>
+                        </div>
+            
+                        <div class="input-field1">
+                            <label class="t1xt"> write about rules and regulation </label>
+                            <textarea class="tx" type="text" id="" name="message" required></textArea>
+                        </div>
+                        <button type="submit" class="submitBtn">Submit</button>
+            
+                </form>--}}
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+>>>>>>> 5a20b5b2bc503857f903f4592979088b28e027d2
     </div>
 
     <div class="table-container">

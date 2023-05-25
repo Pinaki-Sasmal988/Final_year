@@ -1,3 +1,10 @@
+<?php
+    use App\HTTP\Controllers\BankController;
+    $total=0;
+    if(Session::has('admin')){
+        $total=BankController::countBank();
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +13,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/style1.css">
-
+<style>
+    .w-5{
+        display: none;
+    }
+    </style>
 </head>
 
 <body>
@@ -18,7 +29,7 @@
                 <i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
             </label>
         </h2>
-        <header>Bank Registration Verification <br> {{ Session::get('admin')['email'] }}</header>
+        <header>Bank Verification <br></header>
         <i class="fa fa-user" aria-hidden="true"></i>
     </header>
     <div class="body">
@@ -29,29 +40,29 @@
             </div>
             <ul>
                 <li>
-                    <a href="/admin">
+                    <a href="/adminDashboard">
                         <i class="fa fa-desktop" aria-hidden="true"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/adminVerify">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <span>Verify Bank{{ $total>0 ? "($total) ":" "}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/adminShowBank">
                         <i class="fa fa-cog" aria-hidden="true"></i>
                         <span>All Bank</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <i class="fa fa-comment-o" aria-hidden="true"></i>
                         <span>Message</span>
                     </a>
                 </li>
-                <!-- <li>
-     <a href="#">
-      <i class="fa fa-comment-o" aria-hidden="true"></i>
-      <span>Comment</span>
-     </a>
-    </li> -->
                 <li>
                     <a href="#">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
@@ -64,7 +75,7 @@
         {{--  --}}
         <section class="section-1">
             @foreach ($values as $item)
-                <form method="POST" action="/verify">
+                <form method="POST" action="/adminVerify">
                     @csrf
                     <div class="wholeform">
                         <div class="details personal">
@@ -151,16 +162,18 @@
                         </div>
                         <div class="col-ms-25">
                             <button type="submit" id="btn1" class="submitBtn">Verify</button>
-                            <button id="btn2" class="submitBtn"><a href="/cancel{{ $item['id'] }}">Cancel</a></button>
+                            <button id="btn2" class="submitBtn"><a
+                                    href="/cancel{{ $item['id'] }}">Cancel</a></button>
                         </div>
 
                     </div>
 
                 </form>
+                {{ $values->links() }}
             @endforeach
 
         </section>
-
+        
     </div>
 
 </body>

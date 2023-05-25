@@ -304,7 +304,7 @@
 								placeholder="Enter your message here..." style="height: 10rem"
 								data-sb-validations="required"></textarea>
 							<label for="message">Message</label>
-							<div class="invalid-feedback" >A
+							<div class="invalid-feedback" data-sb-feedback="message:required">A
 								message is required.</div>
 						</div>
 						<!-- Submit success message-->

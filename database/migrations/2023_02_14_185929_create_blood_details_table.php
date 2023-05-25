@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('blood_details', function (Blueprint $table) {
-            $table->id('blood_id');
-            $table->string('id');
+            $table->id("blood_id");
+            $table->string('bank_id');
             $table->string('APOS');
             $table->string('BPOS');
             $table->string('OPOS');
