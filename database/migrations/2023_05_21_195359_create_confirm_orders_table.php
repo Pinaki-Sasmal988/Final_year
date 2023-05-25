@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('confirm_orders', function (Blueprint $table) {
-            $table->id('confirm_order_id');
+            $table->Increments('confirm_order_id');
             $table->string('user_id');
             $table->string('bank_id');
             $table->string('name');

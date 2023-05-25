@@ -188,7 +188,7 @@
                 <form class="form-inline" action="/stockUpdate" method="POST">
                     @csrf
                     <div class="form-group mx-sm-3 mb-6">
-                      <input type="text" name="blood_id" value="{{$item->blood_id }}" />
+                      <input type="hidden" name="blood_id" value="{{$item->blood_id }}" />
                         <select name="bloodgroup" class="form-control">
                             <option disabled="disabled" selected="selected">Choose Blood Group</option>
                             <option value="OPOS">O+</option>

@@ -29,7 +29,13 @@
             background-position: center;
             margin: 0;
         }
-        
+        input[type="text"]{
+            width: 50%;
+            padding: 5px;
+            font-size: 20px;
+            border: none;
+            background: transparent;
+        }
        a{
         text-decoration: none;
        }
@@ -70,18 +76,18 @@
         <h1 class="h">All Orders </h1>
         <section id="order">
             @foreach($data as $item)
-            <form method="post" action="/confirmOrder" >
+            <form method="POST" action="/confirmOrder" >
                 @csrf
             <div class="order-box"> 
                 <div class="order-details">
-                    <input type="text"  name="order_id" value="{{$item->order_id }}" readonly>
+                    <input type="hidden"  name="order_id" value="{{$item->order_id }}" readonly>
                    <input type="hidden"  name="user_id" value="{{$item->user_id }}" readonly>
                     <input type="hidden" name="bank_id" value="{{$item->bank_id }}" readonly>
-                    <p> <strong>Name:</strong><input type="text" name="name" value="{{ $item->name }}" readonly></p>
+                    <p> <strong>Name:</strong><b><input type="text" name="name" value="{{ $item->name }}" readonly></b></p>
                     <p> <strong>Mobile No:</strong><input type="text" name="ph_no" value="{{ $item->ph_no }}" readonly></p>
                     <p> <strong>Full Address:</strong><input type="text" name="address" value="{{ $item->address }}" readonly></p>
                     <p> <strong>Blood Group:</strong> <input type="text" name="group" value="{{ $item->group }}" readonly></p>
-                    <p> <strong>Unit:</strong> <input type="number" name="quantity" value="{{ $item->quantity }}" readonly></p>
+                    <p> <strong>Unit:</strong> <input type="text" name="quantity" value="{{ $item->quantity }}" readonly></p>
                     <p> <strong>Card:</strong> <input type="text" name="card" value="{{ $item->card }}" readonly></p>
                     <p> <strong>price:</strong><input type="text" name="price" value="{{ $item->price }}" readonly></p>
                 </div>

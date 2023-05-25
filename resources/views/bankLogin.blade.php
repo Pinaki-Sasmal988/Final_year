@@ -26,7 +26,7 @@
 								<input type="text" name="password" id="password"
 									 placeholder="Enter Password"  required/>
 							</div>
-							<a href="#">Forgot Password?</a>
+							<a href="/forgot">Forgot Password?</a>
 							<div class="form-group form-button">
 								<input type="submit" name="signup" id="signup"
 									class="form-submit" value="Login" />

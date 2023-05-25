@@ -133,19 +133,18 @@ class BankController extends Controller
        $val=$req->group;
        $unit=$req->quantity;
        $result=$data->save();
-        order::destroy($req->order_id);
+       //order::destroy($req->order_id);
        if($result){
         $id=session()->get('value')['bank_id'];
         $data=blood_detail::find($id);
-        $value=$data->$val;
-        $data->$val=($value - $unit);
-        $data->save();
-       return redirect('showorder');
-       }
+         $value=$data->$val;
+         $data->$val=($value - $unit);
+         $data->save();
+         return redirect('showorder');
+      }
      }
      public function ordercancel($id){
         order::destroy($id);
-        //echo $data;
         return redirect('showorder');
      }
      public static function countBank(){

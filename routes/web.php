@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\BloodController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +48,8 @@ Route::view('/booknow','booknow');
 Route::view('/adminLogin','adminLogin');
 Route::view('/notification','notification');
 Route::view('/addStock','addStock');
-
+Route::view('/forgot','forgot');
+Route::view('/putOtp','putOtp');
 
 Route::get('/Dashboard',[UserController::class,'userAllRecords']);
 Route::get('/adminDashboard',[BankController::class,'allRecords']);
@@ -73,4 +75,7 @@ Route::post('/adminLogin',[UserController::class,'adminLogin']);
 Route::POST('/stockUpdate',[BloodController::class,'stockUpdate']);
 Route::post('/confirmOrder',[BankController::class,'confirmOrder']);
 Route::get('/ordercancel{id}',[BankController::class,'ordercancel']);
-// Route::get('/random',[UserController::class,'random']);
+Route::post('/forgotPassword',[ForgotPasswordController::class,'forgotPassword']);
+Route::post('/otpVerify',[ForgotPasswordController::class,'otpVerify']);
+
+// Route::get('/random',[UserController::class,'random']);/otpVerify
