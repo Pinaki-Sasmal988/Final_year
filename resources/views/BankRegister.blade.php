@@ -186,7 +186,7 @@
 	        {
 	            document.getElementById('res').innerText="";
 
-	            if(ele.value.length >9){
+	            if(ele.value.length >10){
 	               // document.getElementById('result').innerText="mobile number only will be 10 digit ";
                  alert("mobile number only will be 10 digit");
 	            }

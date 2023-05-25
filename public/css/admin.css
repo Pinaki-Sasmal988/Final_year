@@ -4,6 +4,13 @@
 	box-sizing: border-box;
 	font-family: arial, sans-serif;
 }
+
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: #f7f7f7;
+  }
+  .table-striped tbody tr:nth-of-type(even) {
+	background-color: #fff;
+  }
 .header {
 	display: flex;
 	justify-content: space-between;

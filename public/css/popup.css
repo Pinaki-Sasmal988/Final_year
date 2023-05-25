@@ -22,8 +22,8 @@ body{
 }
 .show-btn, .container{
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 20%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 input[type="checkbox"]{
@@ -141,7 +141,7 @@ form .signup-link a:hover{
         .fields {
             width: 50%;
             /* background: red; */
-            margin-left: 7px;
+            margin-left: 50%;
         }
 
         .fields1 {
@@ -151,7 +151,7 @@ form .signup-link a:hover{
         }
 
         .input-field1 {
-            margin-left: -333px;
+            margin-left: 333px;
             margin-top: 421px;
         }
 

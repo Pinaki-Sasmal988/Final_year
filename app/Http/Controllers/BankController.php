@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\bank;
 use App\Models\bank_detail;
+use App\Models\blood_detail;
 use Illuminate\Http\Request;
 use App\Mail\SendMail;
 use App\Mail\ConfirmMail;
 use App\Mail\RejectMail;
+use App\Models\confirm_order;
+use App\Models\order;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Session;
 use Illuminate\Support\Facades\DB;  
@@ -49,8 +52,14 @@ class BankController extends Controller
         
     }
     public function fetch(){
-        $data=bank::all();
-        return view('admin',['values'=>$data]);
+        $data=bank::paginate(1);
+        return view('adminVerify',['values'=>$data]);
+    }
+    public function allRecords(){
+        $data=DB::table('bank_details')->join('confirm_orders','bank_details.bank_id','=','confirm_orders.bank_id')
+       ->select('*')->paginate(4);
+        //return view('adminDashboard',['data'=>$data]);
+        return view('adminDashboard',['data'=>$data]);
     }
     public function insert(Request $request){
         $data=new bank_detail;
@@ -72,10 +81,10 @@ class BankController extends Controller
         bank::destroy($request->id);
         if($result){
             $request->Session('message','Bank details verify Successfully');
-            return redirect('admin');
+            return redirect('adminDashboard');
         }else{
             $request->Session('message','Sorry');
-            return redirect('admin');
+            return view('adminDashboard');
         }
 
     }
@@ -83,7 +92,7 @@ class BankController extends Controller
         $data=bank::find($id);
        Mail::to($data->bank_email)->send(new RejectMail($data->bank_name));
        bank::destroy($id);
-       return redirect('admin');
+       return redirect('adminVerify');
     }
     public function search(Request $req){
         if($req->isMethod("POST")){
@@ -102,6 +111,48 @@ class BankController extends Controller
        }
        
      } 
+     public function showBank(){
+        $data= bank_detail::paginate(2);
+        return view('adminShowBank',['value'=>$data]);
+     }
+     public static function countOrder(){
+        $bank_id=session()->get('value')['bank_id'];
+        $total=order::where('bank_id',$bank_id)->count();
+        return $total;
+     }
+     public function confirmOrder(Request $req){
+       $data=new confirm_order();
+       $data->user_id=$req->user_id;
+       $data->bank_id=$req->bank_id;
+       $data->name=$req->name;
+       $data->address=$req->address;
+       $data->ph_no=$req->ph_no;
+       $data->group=$req->group;
+       $data->quantity=$req->quantity;
+       $data->price=$req->price;
+       $val=$req->group;
+       $unit=$req->quantity;
+       $result=$data->save();
+        order::destroy($req->order_id);
+       if($result){
+        $id=session()->get('value')['bank_id'];
+        $data=blood_detail::find($id);
+        $value=$data->$val;
+        $data->$val=($value - $unit);
+        $data->save();
+       return redirect('showorder');
+       }
+     }
+     public function ordercancel($id){
+        order::destroy($id);
+        //echo $data;
+        return redirect('showorder');
+     }
+     public static function countBank(){
+        //$bank_id=session()->get('admin')['id'];
+        $total=bank::all()->count('id');
+        return $total;
+     }
 
     
 }

@@ -24,7 +24,7 @@
                 <h4><b>Mobile No: </b>{{ $item->bank_ph_no }}</h4>
                 <h4><b>Email Id: </b>{{ $item->bank_email }}</h4>
                 <h4><b>Address: </b>{{$item->Address}}</h4>
-                {{ $item->id }}
+                {{ $item->bank_id }}
              </div>
             <div class="rules">
                 <h4>Rules And Regulation</h4>
@@ -47,7 +47,7 @@
                                 <h2>A+ <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                {{ $item->APOS>5?'Available':'Not Available' }}
+                                {{ $item->APOS.'(ML)' }}
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                                 <h2>B+ <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                {{ $item->BPOS>5?'Available':'Not Available' }}
+                                {{ $item->BPOS.'(ML)' }}
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                 <h2>O+ <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                {{ $item->OPOS>5?'Available':'Not Available' }}
+                                {{ $item->OPOS.'(ML)' }}
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                                 <h2>AB+ <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                {{ $item->ABPOS>5?'Available':'Not Available' }}
+                                {{ $item->ABPOS.'(ML)' }}
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                                 <h2>A-<i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                {{ $item->ANEG>5?'Available':'Not Available' }}
+                                {{ $item->ANEG.'(ML)' }}
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                                 <h2>B- <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                {{ $item->BNEG>5?'Available':'Not Available' }}
+                                {{ $item->BNEG.'(ML)' }}
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                                 <h2>O- <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                {{ $item->ONEG>5?'Available':'Not Available' }}
+                                {{ $item->ONEG.'(ML)' }}
                             </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                                 <h2>AB- <i class="fas fa-tint"></i></h2>
                             </div><br><br>
                             <div>
-                                {{ $item->ABNEG>5?'Available':'Not Available' }}   
+                                {{ $item->ABNEG.'(ML)' }}   
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
     </section>
     <div class="btn_container">
        <button id="btn1" type="button" onclick="window.location.href = '/search'">Back</button>
-       <button id="btn2" type="button" onclick="window.location.href = '/booknow{{ $item->id }}'">Order Blood</button> 
+       <button id="btn2" type="button" onclick="window.location.href = '/booknow{{ $item->bank_id }}'">Order Blood</button> 
     </div>  
     @endforeach
 </body>
