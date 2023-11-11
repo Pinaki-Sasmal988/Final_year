@@ -140,6 +140,7 @@ class BankController extends Controller
          $value=$data->$val;
          $data->$val=($value - $unit);
          $data->save();
+         order::destroy($req->order_id);
          return redirect('showorder');
       }
      }

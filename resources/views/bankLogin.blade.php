@@ -23,7 +23,7 @@
 							</div>
 							<div class="form-group">
 								<label for="contact"><i class="zmdi zmdi-lock-outline"></i></label>
-								<input type="text" name="password" id="password"
+								<input type="password" name="password" id="password"
 									 placeholder="Enter Password"  required/>
 							</div>
 							<a href="/forgot">Forgot Password?</a>

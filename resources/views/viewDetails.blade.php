@@ -24,7 +24,7 @@
                 <h4><b>Mobile No: </b>{{ $item->bank_ph_no }}</h4>
                 <h4><b>Email Id: </b>{{ $item->bank_email }}</h4>
                 <h4><b>Address: </b>{{$item->Address}}</h4>
-                {{ $item->bank_id }}
+                {{-- {{ $item->bank_id }} --}}
              </div>
             <div class="rules">
                 <h4>Rules And Regulation</h4>

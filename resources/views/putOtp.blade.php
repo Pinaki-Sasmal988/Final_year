@@ -9,8 +9,10 @@
 <body>
     <form action="/otpVerify" method="post">
         @csrf
+        <input type="hidden" name="email" value="{{ $email }}" readonly/>
         <input type="text" name="otp" placeholder="Enter Yoyur OTP">
-        <button type="submit">Verify</button>
+        <input type="text" name="password" placeholder="SetNew Password">
+        <button type="submit">Reset</button>
     </form>
 </body>
 </html>

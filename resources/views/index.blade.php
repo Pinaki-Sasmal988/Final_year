@@ -97,7 +97,7 @@
 </head>
 <body id="page-top">
 	
-    <div id="bubble" onclick="showMessageBox()">Chat Us</div>
+    <div id="bubble" onclick="showMessageBox()"></div>
 
     <div id="messageBox">
       <label for="message">Enter your message:</label><button class="button1" onclick="hideMessageBox()">X</button><br />
@@ -358,7 +358,7 @@
 	<!-- Copyright Section-->
 	<div class="copyright py-4 text-center text-white">
 		<div class="container">
-			<small>Copyright &copy; Your Website 2022</small>
+			<small>Copyright &copy; Your Website 2023</small>
 		</div>
 	</div>
 	<!-- Bootstrap core JS-->

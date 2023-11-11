@@ -34,6 +34,7 @@ Route::get('/Logout', function () {
 });
 Route::view('/BankRegister','BankRegister');
 Route::view('/message','message');
+Route::view('/index','index');
  Route::view('/showorder','showorder');
 Route::view('/userLogin','userLogin');
 Route::view('/search','search');
